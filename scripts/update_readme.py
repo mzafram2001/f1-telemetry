@@ -58,16 +58,20 @@ def format_position(driver, winner_laps=0):
             return f"{pos_str} *(+{match.group(1)}L)*"
         return pos_str
 
-    if "did not start" in status_low or status_low == "dns":
-        return f"{pos_str} *(DNS)*"
-    if "disqualified" in status_low or status_low == "dsq":
-        return f"{pos_str} *(DSQ)*"
-    if "did not qualify" in status_low or status_low == "dnq":
-        return f"{pos_str} *(DNQ)*"
-    if "not classified" in status_low or status_low == "nc":
-        return f"{pos_str} *(NC)*"
+    if (
+        any(k in status_low for k in ("did not start", "withdrew", "injured", "illness"))
+        or status_low in ("dns", "wd")
+    ):
+        return f"{pos_str} *(DNS)*" if pos is not None else "*(DNS)*"
 
-    return f"{pos_str} *(DNF)*"
+    if "disqualified" in status_low or status_low == "dsq":
+        return f"{pos_str} *(DSQ)*" if pos is not None else "*(DSQ)*"
+    if "did not qualify" in status_low or status_low == "dnq":
+        return f"{pos_str} *(DNQ)*" if pos is not None else "*(DNQ)*"
+    if "not classified" in status_low or status_low == "nc":
+        return f"{pos_str} *(NC)*" if pos is not None else "*(NC)*"
+
+    return f"{pos_str} *(DNF)*" if pos is not None else "*(DNF)*"
 
 
 def get_latest_race_file():
