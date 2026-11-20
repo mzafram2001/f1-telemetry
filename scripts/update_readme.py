@@ -41,13 +41,23 @@ def format_strategy(stints):
     return " → ".join(labels) if labels else "—"
 
 
-def format_position(driver):
+def format_position(driver, winner_laps=0):
     pos = driver.get("Finish_Position")
     pos_str = f"P{pos}" if pos is not None else "—"
     status_low = (driver.get("Status") or "").strip().lower()
 
-    if not status_low or status_low in ("finished", "lapped", "unknown") or status_low.startswith("+"):
+    if not status_low or status_low in ("finished", "unknown"):
         return pos_str
+
+    if status_low == "lapped" or status_low.startswith("+"):
+        laps_done = driver.get("Laps_Completed")
+        if winner_laps and laps_done is not None and winner_laps > laps_done:
+            return f"{pos_str} *(+{winner_laps - laps_done}L)*"
+        match = re.search(r"\+(\d+)", status_low)
+        if match:
+            return f"{pos_str} *(+{match.group(1)}L)*"
+        return pos_str
+
     if "did not start" in status_low or status_low == "dns":
         return f"{pos_str} *(DNS)*"
     if "disqualified" in status_low or status_low == "dsq":
@@ -56,6 +66,7 @@ def format_position(driver):
         return f"{pos_str} *(DNQ)*"
     if "not classified" in status_low or status_low == "nc":
         return f"{pos_str} *(NC)*"
+
     return f"{pos_str} *(DNF)*"
 
 
@@ -84,11 +95,14 @@ def generate_race_markdown(race_json_path):
 
     meta = data.get("Meta", {})
     weather = data.get("Weather", {})
+    drivers = data.get("Drivers", [])
     season = meta.get("Season", "N/A")
     race_id = meta.get("Race_Id", 0)
     event_name = meta.get("Event_Name") or ""
     circuit = meta.get("Circuit") or {}
     circuit_svg = circuit.get("Svg_Path")
+
+    winner_laps = max((d.get("Laps_Completed") or 0 for d in drivers), default=0)
 
     event_suffix = f" · {event_name}" if event_name else ""
     circuit_img = ""
@@ -124,8 +138,8 @@ def generate_race_markdown(race_json_path):
         "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
     ])
 
-    for d in data.get("Drivers", []):
-        pos_str = format_position(d)
+    for d in drivers:
+        pos_str = format_position(d, winner_laps)
 
         d_code = (d.get("Driver_Code") or "unk").lower()
         t_code = (d.get("Team_Code") or "unk").lower()
