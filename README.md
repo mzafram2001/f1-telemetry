@@ -114,20 +114,20 @@ Each session file (`data/{season}/round_{id}/{qualifying|sprint|race}.json`) fol
 | P6 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/pia-mcl-2026.svg' width='44' height='32' align='center'> | 1:13.018 | 1:15.911 | 325 km/h | 3 | INT → S → S → INT |
 | P7 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/law-vrb-2026.svg' width='44' height='32' align='center'> | 1:13.495 | 1:16.231 | 326 km/h | 3 | INT → S → S → INT |
 | P8 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/lec-fer-2026.svg' width='44' height='32' align='center'> | 1:14.170 | 1:16.478 | 323 km/h | 2 | INT → S → INT |
-| P9 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/ham-fer-2026.svg' width='44' height='32' align='center'> | 1:13.724 | 1:16.134 | 337 km/h | 3 | INT → S → S → INT |
-| P10 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/hul-aud-2026.svg' width='44' height='32' align='center'> | 1:14.000 | 1:16.478 | 322 km/h | 3 | INT → S → S → INT |
-| P11 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/lin-vrb-2026.svg' width='44' height='32' align='center'> | 1:14.004 | 1:16.723 | 326 km/h | 3 | INT → S → S → INT |
-| P12 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alo-ast-2026.svg' width='44' height='32' align='center'> | 1:14.706 | 1:16.870 | 314 km/h | 3 | INT → S → S → INT |
-| P13 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/col-alp-2026.svg' width='44' height='32' align='center'> | 1:13.710 | 1:16.864 | 343 km/h | 3 | INT → S → S → INT |
-| P14 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/gas-alp-2026.svg' width='44' height='32' align='center'> | 1:14.462 | 1:16.813 | 334 km/h | 3 | INT → S → S → INT |
-| P15 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alb-wil-2026.svg' width='44' height='32' align='center'> | 1:14.464 | 1:17.264 | 329 km/h | 3 | INT → S → S → INT |
-| P16 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bor-aud-2026.svg' width='44' height='32' align='center'> | 1:14.940 | 1:17.828 | 329 km/h | 3 | INT → S → S → INT |
-| P17 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bea-haa-2026.svg' width='44' height='32' align='center'> | 1:14.036 | 1:17.703 | 323 km/h | 3 | INT → S → S → INT |
-| P18 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/per-cad-2026.svg' width='44' height='32' align='center'> | 1:16.123 | 1:18.271 | 325 km/h | 2 | INT → S → INT |
-| P19 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/sai-wil-2026.svg' width='44' height='32' align='center'> | 1:14.613 | 1:18.018 | 331 km/h | 3 | INT → S → S → INT |
-| P20 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/cam-haa-2026.svg' width='44' height='32' align='center'> | 1:14.369 | 1:18.432 | 334 km/h | 3 | INT → S → S → INT |
+| P9 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/ham-fer-2026.svg' width='44' height='32' align='center'> | 1:13.724 | 1:16.134 | 337 km/h | 3 | INT → S → S → INT |
+| P10 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/hul-aud-2026.svg' width='44' height='32' align='center'> | 1:14.000 | 1:16.478 | 322 km/h | 3 | INT → S → S → INT |
+| P11 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/lin-vrb-2026.svg' width='44' height='32' align='center'> | 1:14.004 | 1:16.723 | 326 km/h | 3 | INT → S → S → INT |
+| P12 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alo-ast-2026.svg' width='44' height='32' align='center'> | 1:14.706 | 1:16.870 | 314 km/h | 3 | INT → S → S → INT |
+| P13 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/col-alp-2026.svg' width='44' height='32' align='center'> | 1:13.710 | 1:16.864 | 343 km/h | 3 | INT → S → S → INT |
+| P14 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/gas-alp-2026.svg' width='44' height='32' align='center'> | 1:14.462 | 1:16.813 | 334 km/h | 3 | INT → S → S → INT |
+| P15 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alb-wil-2026.svg' width='44' height='32' align='center'> | 1:14.464 | 1:17.264 | 329 km/h | 3 | INT → S → S → INT |
+| P16 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bor-aud-2026.svg' width='44' height='32' align='center'> | 1:14.940 | 1:17.828 | 329 km/h | 3 | INT → S → S → INT |
+| P17 *(+1L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bea-haa-2026.svg' width='44' height='32' align='center'> | 1:14.036 | 1:17.703 | 323 km/h | 3 | INT → S → S → INT |
+| P18 *(+2L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/per-cad-2026.svg' width='44' height='32' align='center'> | 1:16.123 | 1:18.271 | 325 km/h | 2 | INT → S → INT |
+| P19 *(+2L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/sai-wil-2026.svg' width='44' height='32' align='center'> | 1:14.613 | 1:18.018 | 331 km/h | 3 | INT → S → S → INT |
+| P20 *(+2L)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/cam-haa-2026.svg' width='44' height='32' align='center'> | 1:14.369 | 1:18.432 | 334 km/h | 3 | INT → S → S → INT |
 | P21 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/str-ast-2026.svg' width='44' height='32' align='center'> | 1:17.430 | 1:25.498 | 323 km/h | 1 | INT → S |
-| P22 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bot-cad-2026.svg' width='44' height='32' align='center'> | — | — | — | 0 | INT |
+| P22 *(DNS)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/bot-cad-2026.svg' width='44' height='32' align='center'> | — | — | — | 0 | INT |
 
 #### 🏢 Race Telemetry — Constructors
 
