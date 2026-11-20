@@ -41,6 +41,24 @@ def format_strategy(stints):
     return " → ".join(labels) if labels else "—"
 
 
+def format_position(driver):
+    pos = driver.get("Finish_Position")
+    pos_str = f"P{pos}" if pos is not None else "—"
+    status_low = (driver.get("Status") or "").strip().lower()
+
+    if not status_low or status_low in ("finished", "lapped", "unknown") or status_low.startswith("+"):
+        return pos_str
+    if "did not start" in status_low or status_low == "dns":
+        return f"{pos_str} *(DNS)*"
+    if "disqualified" in status_low or status_low == "dsq":
+        return f"{pos_str} *(DSQ)*"
+    if "did not qualify" in status_low or status_low == "dnq":
+        return f"{pos_str} *(DNQ)*"
+    if "not classified" in status_low or status_low == "nc":
+        return f"{pos_str} *(NC)*"
+    return f"{pos_str} *(DNF)*"
+
+
 def get_latest_race_file():
     """Devuelve la ruta al race.json más reciente de todo el repositorio."""
     seasons = sorted(
@@ -107,10 +125,7 @@ def generate_race_markdown(race_json_path):
     ])
 
     for d in data.get("Drivers", []):
-        pos = d.get("Finish_Position")
-        pos_str = f"P{pos}" if pos is not None else "—"
-        if d.get("Status") and d["Status"] != "Finished" and not str(d["Status"]).startswith("+"):
-            pos_str = f"{pos_str} *(DNF)*"
+        pos_str = format_position(d)
 
         d_code = (d.get("Driver_Code") or "unk").lower()
         t_code = (d.get("Team_Code") or "unk").lower()
