@@ -1,0 +1,53 @@
+name: Update F1 Telemetry data
+
+on:
+  schedule:
+    - cron: '8 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'Season year (leave empty for current year)'
+        required: false
+        type: string
+      round:
+        description: 'Specific round number (optional)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  update-telemetry:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Fetch F1 telemetry data
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.season }}" ]; then ARGS="$ARGS --season ${{ inputs.season }}"; fi
+          if [ -n "${{ inputs.round }}" ]; then ARGS="$ARGS --round ${{ inputs.round }}"; fi
+          python scripts/get_round_data.py $ARGS
+
+      - name: Validate telemetry dataset
+        run: python scripts/validate_data.py
+
+      - name: Update README
+        run: |
+          if [ -f scripts/update_readme.py ]; then python scripts/update_readme.py; fi
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "mzafram2001@gmail.com"
+          git config --local user.name "mzafram2001"
+
+          git add data/ README.md
+          git diff --staged --quiet || (git commit -m "auto: Update F1 Telemetry data & README" && git push)
