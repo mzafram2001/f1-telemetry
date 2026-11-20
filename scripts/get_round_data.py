@@ -23,6 +23,7 @@ SESSION_FILES = {
     "Sprint": "sprint.json",
     "Race": "race.json",
 }
+DNS_STATUS_ALIASES = {"did not start", "dns", "withdrew", "wd", "injured", "illness"}
 
 
 class OpenF1LiveSessionError(Exception):
@@ -91,6 +92,45 @@ def parse_iso_utc(ts):
 
 def to_openf1_iso(dt):
     return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+
+
+def normalize_status(raw_status):
+    """Unifica retiradas previas a la salida bajo 'Did not start'."""
+    if not raw_status:
+        return raw_status
+    cleaned = raw_status.strip()
+    if cleaned.lower() in DNS_STATUS_ALIASES:
+        return "Did not start"
+    return cleaned
+
+
+def build_empty_driver_entry(code, info, status, grid_pos=None, finish_pos=None, laps=0):
+    """Construye una entrada sin telemetría para pilotos DNS o retirados tras Qualifying."""
+    return {
+        "Driver_Name": info.get("Driver_Name") or code,
+        "Driver_Code": code,
+        "Driver_Number": info.get("Driver_Number"),
+        "Team_Name": info.get("Team_Name", "N/A"),
+        "Team_Code": info.get("Team_Code", "N/A"),
+        "Grid_Position": grid_pos,
+        "Finish_Position": finish_pos,
+        "Status": normalize_status(status),
+        "Laps_Completed": laps,
+        "Fastest_Lap_Sec": None,
+        "Fastest_Lap_Number": None,
+        "Avg_Pace_Sec": None,
+        "Best_Sector_1_Sec": None,
+        "Best_Sector_2_Sec": None,
+        "Best_Sector_3_Sec": None,
+        "Top_Speed_Kmh": None,
+        "Full_Throttle_Pct": None,
+        "Brake_Pct": None,
+        "Pit_Stops": 0,
+        "Avg_Pit_Lane_Sec": None,
+        "Avg_Pit_Stop_Sec": None,
+        "Stints": [],
+        "Fastest_Lap_Trace": None,
+    }
 
 
 def match_openf1_session(openf1_sessions, session_type, scheduled_iso):
@@ -192,7 +232,7 @@ def build_trace_and_metrics(car_rows, target_samples=100):
         "Samples": len(sampled),
         "Speed_Kmh": [int(r.get("speed") or 0) for r in sampled],
         "Throttle_Pct": [int(r.get("throttle") or 0) for r in sampled],
-        "Brake_Pct": [int(r.get("brake") or 0) for r in sampled],
+        "Brake_Pct": [100 if (r.get("brake") or 0) > 0 else 0 for r in sampled],
         "Gear": [int(r.get("n_gear") or 0) for r in sampled],
         "Rpm": [int(r.get("rpm") or 0) for r in sampled],
     }
@@ -237,9 +277,13 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
         unique_drivers[d["driver_number"]] = d
 
     processed_drivers = []
+    processed_codes = set()
 
     for drv_num, d in unique_drivers.items():
         code = (d.get("name_acronym") or "").upper()
+        if code:
+            processed_codes.add(code)
+
         j_res = jolpica_results.get(code, {})
 
         if j_res.get("Driver_Name"):
@@ -291,9 +335,14 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
             ]
             top_speed = max(trap_speeds) if trap_speeds else None
 
-        # Stints ordenados
+        # Stints ordenados y filtrando stints fantasma invertidos (lap_end < lap_start)
         d_stints = sorted(
-            stints_by_num.get(drv_num, []),
+            [
+                s for s in stints_by_num.get(drv_num, [])
+                if s.get("lap_start") is None
+                or s.get("lap_end") is None
+                or s["lap_end"] >= s["lap_start"]
+            ],
             key=lambda s: s.get("stint_number") or 0,
         )
         formatted_stints = [
@@ -332,7 +381,7 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
             "Team_Code": team_code,
             "Grid_Position": j_res.get("Grid_Position"),
             "Finish_Position": j_res.get("Finish_Position"),
-            "Status": j_res.get("Status"),
+            "Status": normalize_status(j_res.get("Status")),
             "Laps_Completed": laps_completed or 0,
             "Fastest_Lap_Sec": round(float(fastest_lap["lap_duration"]), 3) if fastest_lap else None,
             "Fastest_Lap_Number": fastest_lap.get("lap_number") if fastest_lap else None,
@@ -350,6 +399,40 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
             "Fastest_Lap_Trace": trace,
         }
         processed_drivers.append(driver_entry)
+
+    # 1. Pilotos presentes en Jolpica-F1 que no emitieron en OpenF1 (DNS en parrilla)
+    for code, j_res in jolpica_results.items():
+        if code in processed_codes:
+            continue
+        processed_codes.add(code)
+        processed_drivers.append(
+            build_empty_driver_entry(
+                code=code,
+                info=j_res,
+                status=j_res.get("Status") or "Did not start",
+                grid_pos=j_res.get("Grid_Position"),
+                finish_pos=j_res.get("Finish_Position"),
+                laps=j_res.get("Laps_Completed") or 0,
+            )
+        )
+
+    # 2. Pilotos que corrieron Qualifying pero se retiraron antes de la carrera -> DNS
+    if session_type == "Race":
+        quali_results = fetch_session_results(season, race_id, "Qualifying")
+        for code, q_res in quali_results.items():
+            if code in processed_codes:
+                continue
+            processed_codes.add(code)
+            processed_drivers.append(
+                build_empty_driver_entry(
+                    code=code,
+                    info=q_res,
+                    status="Did not start",
+                    grid_pos=None,
+                    finish_pos=None,
+                    laps=0,
+                )
+            )
 
     processed_drivers.sort(
         key=lambda x: (
