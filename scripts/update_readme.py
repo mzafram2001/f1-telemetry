@@ -1,5 +1,4 @@
 import json
-import os
 import re
 from datetime import datetime
 from pathlib import Path
@@ -42,19 +41,26 @@ def format_strategy(stints):
     return " → ".join(labels) if labels else "—"
 
 
-def get_latest_race_file(season_dir):
-    rounds = sorted(
-        [d for d in season_dir.iterdir() if d.is_dir() and d.name.startswith("round_")],
+def get_latest_race_file():
+    """Devuelve la ruta al race.json más reciente de todo el repositorio."""
+    seasons = sorted(
+        [d for d in DATA_DIR.iterdir() if d.is_dir() and d.name.isdigit()],
+        key=lambda p: int(p.name),
         reverse=True,
     )
-    for r_dir in rounds:
-        race_file = r_dir / "race.json"
-        if race_file.exists():
-            return race_file
+    for season_dir in seasons:
+        rounds = sorted(
+            [d for d in season_dir.iterdir() if d.is_dir() and d.name.startswith("round_")],
+            reverse=True,
+        )
+        for r_dir in rounds:
+            race_file = r_dir / "race.json"
+            if race_file.exists():
+                return race_file
     return None
 
 
-def generate_season_markdown(race_json_path, is_latest_season=False):
+def generate_race_markdown(race_json_path):
     with race_json_path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -66,7 +72,6 @@ def generate_season_markdown(race_json_path, is_latest_season=False):
     circuit = meta.get("Circuit") or {}
     circuit_svg = circuit.get("Svg_Path")
 
-    open_attr = " open" if is_latest_season else ""
     event_suffix = f" · {event_name}" if event_name else ""
     circuit_img = ""
     if circuit_svg:
@@ -86,7 +91,7 @@ def generate_season_markdown(race_json_path, is_latest_season=False):
     weather_line = f"> {' · '.join(weather_parts)}" if weather_parts else ""
 
     md = [
-        f"<details{open_attr}>",
+        "<details open>",
         f"<summary><b>🏎️ {season} Season — Round {race_id:02d}{event_suffix} (Race)</b>{circuit_img}</summary>",
         "",
     ]
@@ -124,7 +129,7 @@ def generate_season_markdown(race_json_path, is_latest_season=False):
         "",
         "#### 🏢 Race Telemetry — Constructors",
         "",
-        "| Team | Avg pace | Top speed | Avg pit lane | Avg pit stop |",
+        "| Team | Avg pace | Top speed | Avg pit lane | Laps |",
         "| :--- | :--- | :--- | :--- | :--- |",
     ])
 
@@ -136,9 +141,9 @@ def generate_season_markdown(race_json_path, is_latest_season=False):
         pace = format_lap_time(t.get("Avg_Pace_Sec"))
         speed = f"{t['Top_Speed_Kmh']} km/h" if t.get("Top_Speed_Kmh") is not None else "—"
         pit_lane = f"{t['Avg_Pit_Lane_Sec']:.2f}s" if t.get("Avg_Pit_Lane_Sec") is not None else "—"
-        pit_stop = f"{t['Avg_Pit_Stop_Sec']:.2f}s" if t.get("Avg_Pit_Stop_Sec") is not None else "—"
+        laps = t.get("Total_Laps_Completed", 0)
 
-        md.append(f"| {img_team} | {pace} | {speed} | {pit_lane} | {pit_stop} |")
+        md.append(f"| {img_team} | {pace} | {speed} | {pit_lane} | {laps} |")
 
     md.extend(["", "</details>", ""])
     return "\n".join(md)
@@ -149,35 +154,22 @@ def update_readme():
         print(f"Directory '{DATA_DIR}' not found.")
         return
 
-    seasons = sorted(
-        [d for d in DATA_DIR.iterdir() if d.is_dir() and d.name.isdigit()],
-        key=lambda p: p.name,
-        reverse=True,
-    )
-
-    if not seasons:
-        print("No season directories found in data/.")
+    latest_race_file = get_latest_race_file()
+    if not latest_race_file:
+        print("No race.json files found in data/.")
         return
-
-    summary_blocks = []
-    for idx, season_dir in enumerate(seasons):
-        race_file = get_latest_race_file(season_dir)
-        if race_file:
-            summary_blocks.append(
-                generate_season_markdown(race_file, is_latest_season=(idx == 0))
-            )
 
     if not README_PATH.exists():
         print(f"'{README_PATH}' not found.")
         return
 
     readme_content = README_PATH.read_text(encoding="utf-8")
-    full_summary_md = "\n\n".join(summary_blocks)
+    latest_summary_md = generate_race_markdown(latest_race_file)
 
     summary_pattern = r"(<!-- SEASONS_SUMMARY_START -->)(.*?)(<!-- SEASONS_SUMMARY_END -->)"
     if re.search(summary_pattern, readme_content, flags=re.DOTALL):
         readme_content = re.sub(
-            summary_pattern, f"\\1\n{full_summary_md}\n\\3", readme_content, flags=re.DOTALL
+            summary_pattern, f"\\1\n{latest_summary_md}\n\\3", readme_content, flags=re.DOTALL
         )
 
     today_str = datetime.now().strftime("%Y-%m-%d")
@@ -188,7 +180,7 @@ def update_readme():
         )
 
     README_PATH.write_text(readme_content, encoding="utf-8")
-    print("README.md updated successfully!")
+    print(f"README.md updated successfully with {latest_race_file}!")
 
 
 if __name__ == "__main__":
