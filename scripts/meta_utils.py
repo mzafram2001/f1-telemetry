@@ -2,7 +2,7 @@ import json
 import tempfile
 import time
 import zipfile
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -83,12 +83,12 @@ def format_driver_name(given_name, family_name):
     return f"{given_name.strip()[0]}. {family_name.strip()}"
 
 
-def to_iso_utc(date_str, time_str=None):
+def to_iso_utc(date_str, time_str=None, default_time=None):
     """Normaliza fecha/hora de F1DB ('2026-11-22', '04:00') a ISO-8601 UTC."""
     if not date_str:
         return None
     if not time_str:
-        return f"{date_str}T12:00:00Z"
+        return f"{date_str}T{default_time}" if default_time else date_str
     t = str(time_str).strip()
     if len(t) == 5:  # HH:MM
         t = f"{t}:00"
@@ -105,6 +105,16 @@ def parse_points(raw_val):
         return int(val) if val.is_integer() else round(val, 2)
     except (ValueError, TypeError):
         return None
+
+
+def _shift_date(date_str, delta_days):
+    if not date_str:
+        return None
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d") + timedelta(days=delta_days)
+        return dt.strftime("%Y-%m-%d")
+    except ValueError:
+        return date_str
 
 
 def _ensure_f1db_zip(force_refresh=False):
@@ -213,26 +223,42 @@ def fetch_season_schedule(season):
     season_races = store["races_by_season"].get(int(season), {})
     schedule = {}
     for rd, r in sorted(season_races.items()):
-        has_sprint = bool(r.get("sprintRaceDate"))
+        race_date = r.get("date")
+        has_sprint = bool(r.get("sprintRaceDate")) or bool(store["sprint_results"].get(r["id"]))
+        has_quali = (
+            bool(r.get("qualifyingDate"))
+            or bool(store["qualifying_results"].get(r["id"]))
+            or bool(race_date)
+        )
+
+        # Fallback de fechas si F1DB solo trae la fecha de carrera (ej. 2023)
+        quali_date = r.get("qualifyingDate") or (
+            _shift_date(race_date, -2 if (has_sprint and int(season) == 2023) else -1)
+            if has_quali
+            else None
+        )
+        sprint_date = r.get("sprintRaceDate") or (
+            _shift_date(race_date, -1) if has_sprint else None
+        )
+        sq_date = r.get("sprintQualifyingDate") or (
+            _shift_date(race_date, -1 if int(season) == 2023 else -2) if has_sprint else None
+        )
+
         schedule[rd] = {
             "f1db_race_id": r["id"],
             "round": rd,
             "raceName": _format_event_name(store, r),
-            "date": r.get("date"),
+            "date": race_date,
             "time": r.get("time"),
             "Qualifying": (
-                {"date": r.get("qualifyingDate"), "time": r.get("qualifyingTime")}
-                if r.get("qualifyingDate")
-                else None
+                {"date": quali_date, "time": r.get("qualifyingTime")} if quali_date else None
             ),
             "SprintQualifying": (
-                {"date": r.get("sprintQualifyingDate"), "time": r.get("sprintQualifyingTime")}
-                if r.get("sprintQualifyingDate")
-                else None
+                {"date": sq_date, "time": r.get("sprintQualifyingTime")} if sq_date else None
             ),
             "Sprint": (
-                {"date": r.get("sprintRaceDate"), "time": r.get("sprintRaceTime")}
-                if has_sprint
+                {"date": sprint_date, "time": r.get("sprintRaceTime")}
+                if has_sprint and sprint_date
                 else None
             ),
             "_raw": r,
@@ -293,7 +319,6 @@ def fetch_session_results(season, race_id, session_type):
     if not rows:
         return {}
 
-    # Ranking oficial de vuelta rápida en carrera
     fl_rank_by_driver = {}
     if session_type == "Race":
         for fl in store["fastest_laps"].get(f1db_rid, []):
@@ -414,13 +439,17 @@ def build_meta(season, race_id, session_type, race_info, openf1_session_key=None
     scheduled_laps = raw_race.get("laps")
     distance_km = raw_race.get("distance")
 
+    is_sprint = bool(raw_race.get("sprintRaceDate")) or bool(
+        store and store["sprint_results"].get(raw_race.get("id"))
+    )
+
     return {
         "Id": f"{season}_{race_id:02d}",
         "Season": int(season),
         "Race_Id": int(race_id),
         "Event_Name": race_info["raceName"] if race_info else _format_event_name(store, raw_race),
         "Session_Type": session_type,
-        "Is_Sprint": bool(raw_race.get("sprintRaceDate")),
+        "Is_Sprint": is_sprint,
         "OpenF1_Session_Key": openf1_session_key,
         "Circuit": {
             "Id": svg_slug,
