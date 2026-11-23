@@ -129,21 +129,21 @@ Each session file (`data/{season}/round_{id}/{qualifying|sprint|race}.json`) fol
 | P19 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alo-ast-2026.svg' width='44' height='32' align='center'> | 1:38.560 | 1:39.958 | 329 km/h | 1 | S → M |
 | P20 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/lin-vrb-2026.svg' width='44' height='32' align='center'> | 1:37.883 | 1:39.119 | 339 km/h | 1 | S → M |
 | P21 *(DNF)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/per-cad-2026.svg' width='44' height='32' align='center'> | 1:39.296 | 1:39.991 | 346 km/h | 0 | S |
-| P22 *(DNS)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alb-wil-2026.svg' width='44' height='32' align='center'> | — | — | — | 0 | S |
+| P22 *(DNS)* | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/drivers/alb-wil-2026.svg' width='44' height='32' align='center'> | — | — | — | 0 | — |
 
 #### 🏢 Race Telemetry — Constructors
 
 | Team | Avg pace | Top speed | Avg pit lane | Laps |
 | :--- | :--- | :--- | :--- | :--- |
-| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/red-2026.svg' width='44' height='32' align='center'> | 1:37.921 | 337 km/h | 24.73s | 100 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/mcl-2026.svg' width='44' height='32' align='center'> | 1:37.977 | 349 km/h | 26.14s | 100 |
-| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/fer-2026.svg' width='44' height='32' align='center'> | 1:37.990 | 335 km/h | 27.32s | 100 |
-| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/mer-2026.svg' width='44' height='32' align='center'> | 1:38.000 | 350 km/h | 24.19s | 100 |
+| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/red-2026.svg' width='44' height='32' align='center'> | 1:37.921 | 337 km/h | 24.73s | 100 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/alp-2026.svg' width='44' height='32' align='center'> | 1:38.072 | 352 km/h | 22.99s | 100 |
+| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/mer-2026.svg' width='44' height='32' align='center'> | 1:38.000 | 350 km/h | 24.19s | 100 |
+| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/fer-2026.svg' width='44' height='32' align='center'> | 1:37.990 | 335 km/h | 27.32s | 100 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/wil-2026.svg' width='44' height='32' align='center'> | 1:38.274 | 351 km/h | 22.16s | 50 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/aud-2026.svg' width='44' height='32' align='center'> | 1:38.617 | 340 km/h | 21.84s | 100 |
-| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/vrb-2026.svg' width='44' height='32' align='center'> | 1:38.718 | 349 km/h | 23.05s | 69 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/haa-2026.svg' width='44' height='32' align='center'> | 1:39.038 | 335 km/h | 24.02s | 100 |
+| <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/vrb-2026.svg' width='44' height='32' align='center'> | 1:38.718 | 349 km/h | 23.05s | 69 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/ast-2026.svg' width='44' height='32' align='center'> | 1:40.145 | 341 km/h | 21.90s | 99 |
 | <img src='https://raw.githubusercontent.com/mzafram2001/f1-fantasy/main/src/constructors/cad-2026.svg' width='44' height='32' align='center'> | 1:40.169 | 349 km/h | 21.91s | 67 |
 

@@ -1,11 +1,54 @@
 {
-    "Generated_At": "2026-11-23T12:24:17.269357",
+    "Generated_At": "2026-11-23T13:51:15.629245",
     "Seasons": [
         {
             "Season": 2026,
-            "Completed_Rounds": 20,
+            "Completed_Rounds": 21,
             "Standings_Path": "data/2026/standings.json",
             "Rounds": [
+                {
+                    "Id": "2026_01",
+                    "Race_Id": 1,
+                    "Event_Name": "Australian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "melbourne",
+                        "Full_Name": "Albert Park Circuit",
+                        "City": "Melbourne",
+                        "Country_Code": "AUS",
+                        "Country_Name": "Australia",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.278,
+                        "Turns": 14,
+                        "Scheduled_Laps": 58,
+                        "Race_Distance_Km": 306.124,
+                        "Svg_Path": "src/circuits/melbourne.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-03-07T05:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-03-08T04:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "ANT",
+                        "LEC"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 30.0
+                    }
+                },
                 {
                     "Id": "2026_02",
                     "Race_Id": 2,
@@ -13,9 +56,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "shanghai",
+                        "Full_Name": "Shanghai International Circuit",
                         "City": "Shanghai",
                         "Country_Code": "CHN",
                         "Country_Name": "China",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.451,
+                        "Turns": 16,
+                        "Scheduled_Laps": 56,
+                        "Race_Distance_Km": 305.066,
                         "Svg_Path": "src/circuits/shanghai.svg"
                     },
                     "Start_Times": {
@@ -37,7 +87,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ANT",
+                        "Driver_Name": "K. Antonelli",
+                        "Percentage": 23.43
+                    }
                 },
                 {
                     "Id": "2026_03",
@@ -46,9 +100,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "suzuka",
+                        "Full_Name": "Suzuka Circuit",
                         "City": "Suzuka",
                         "Country_Code": "JPN",
                         "Country_Name": "Japan",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.807,
+                        "Turns": 18,
+                        "Scheduled_Laps": 53,
+                        "Race_Distance_Km": 307.471,
                         "Svg_Path": "src/circuits/suzuka.svg"
                     },
                     "Start_Times": {
@@ -69,7 +130,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PIA",
+                        "Driver_Name": "O. Piastri",
+                        "Percentage": 27.36
+                    }
                 },
                 {
                     "Id": "2026_04",
@@ -78,16 +143,23 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "miami",
-                        "City": "Miami",
+                        "Full_Name": "Miami International Autodrome",
+                        "City": "Miami Gardens",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 5.412,
+                        "Turns": 19,
+                        "Scheduled_Laps": 57,
+                        "Race_Distance_Km": 308.326,
                         "Svg_Path": "src/circuits/miami.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2026-05-02T20:00:00Z",
                         "Sprint_Qualifying": "2026-05-01T20:30:00Z",
                         "Sprint": "2026-05-02T16:00:00Z",
-                        "Race": "2026-05-03T20:00:00Z"
+                        "Race": "2026-05-03T17:00:00Z"
                     },
                     "Sessions": [
                         "qualifying",
@@ -102,7 +174,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "NOR",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 26.32
+                    }
                 },
                 {
                     "Id": "2026_05",
@@ -111,9 +187,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "montreal",
+                        "Full_Name": "Circuit Gilles Villeneuve",
                         "City": "Montreal",
                         "Country_Code": "CAN",
                         "Country_Name": "Canada",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.361,
+                        "Turns": 14,
+                        "Scheduled_Laps": 68,
+                        "Race_Distance_Km": 296.548,
                         "Svg_Path": "src/circuits/montreal.svg"
                     },
                     "Start_Times": {
@@ -135,7 +218,11 @@
                     ],
                     "Pole_Code": "RUS",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "HAM",
+                        "Driver_Name": "L. Hamilton",
+                        "Percentage": 27.73
+                    }
                 },
                 {
                     "Id": "2026_06",
@@ -144,9 +231,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "monaco",
+                        "Full_Name": "Circuit de Monaco",
                         "City": "Monte Carlo",
                         "Country_Code": "MCO",
                         "Country_Name": "Monaco",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 3.337,
+                        "Turns": 19,
+                        "Scheduled_Laps": 78,
+                        "Race_Distance_Km": 260.286,
                         "Svg_Path": "src/circuits/monaco.svg"
                     },
                     "Start_Times": {
@@ -167,18 +261,29 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ANT",
+                        "Driver_Name": "K. Antonelli",
+                        "Percentage": 22.37
+                    }
                 },
                 {
                     "Id": "2026_07",
                     "Race_Id": 7,
-                    "Event_Name": "Barcelona Grand Prix",
+                    "Event_Name": "Barcelona-Catalunya Grand Prix",
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "catalunya",
-                        "City": "Barcelona",
+                        "Full_Name": "Circuit de Barcelona-Catalunya",
+                        "City": "Montmeló",
                         "Country_Code": "ESP",
                         "Country_Name": "Spain",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.657,
+                        "Turns": 14,
+                        "Scheduled_Laps": 66,
+                        "Race_Distance_Km": 307.236,
                         "Svg_Path": "src/circuits/catalunya.svg"
                     },
                     "Start_Times": {
@@ -199,7 +304,11 @@
                     ],
                     "Pole_Code": "RUS",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "HAM",
+                        "Driver_Name": "L. Hamilton",
+                        "Percentage": 51.86
+                    }
                 },
                 {
                     "Id": "2026_08",
@@ -208,9 +317,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "spielberg",
+                        "Full_Name": "Red Bull Ring",
                         "City": "Spielberg",
                         "Country_Code": "AUT",
                         "Country_Name": "Austria",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.326,
+                        "Turns": 10,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 307.018,
                         "Svg_Path": "src/circuits/spielberg.svg"
                     },
                     "Start_Times": {
@@ -231,7 +347,11 @@
                     ],
                     "Pole_Code": "RUS",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 39.61
+                    }
                 },
                 {
                     "Id": "2026_09",
@@ -240,9 +360,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "silverstone",
+                        "Full_Name": "Silverstone Circuit",
                         "City": "Silverstone",
                         "Country_Code": "GBR",
                         "Country_Name": "United Kingdom",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.891,
+                        "Turns": 18,
+                        "Scheduled_Laps": 52,
+                        "Race_Distance_Km": 306.198,
                         "Svg_Path": "src/circuits/silverstone.svg"
                     },
                     "Start_Times": {
@@ -264,7 +391,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "LEC",
+                        "Driver_Name": "C. Leclerc",
+                        "Percentage": 26.82
+                    }
                 },
                 {
                     "Id": "2026_10",
@@ -273,9 +404,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "spa-francorchamps",
+                        "Full_Name": "Circuit de Spa-Francorchamps",
                         "City": "Spa",
                         "Country_Code": "BEL",
                         "Country_Name": "Belgium",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 7.004,
+                        "Turns": 19,
+                        "Scheduled_Laps": 44,
+                        "Race_Distance_Km": 308.052,
                         "Svg_Path": "src/circuits/spa-francorchamps.svg"
                     },
                     "Start_Times": {
@@ -296,7 +434,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "NOR",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "LEC",
+                        "Driver_Name": "C. Leclerc",
+                        "Percentage": 17.7
+                    }
                 },
                 {
                     "Id": "2026_11",
@@ -305,9 +447,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "hungaroring",
+                        "Full_Name": "Hungaroring",
                         "City": "Budapest",
                         "Country_Code": "HUN",
                         "Country_Name": "Hungary",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.381,
+                        "Turns": 14,
+                        "Scheduled_Laps": 70,
+                        "Race_Distance_Km": 306.63,
                         "Svg_Path": "src/circuits/hungaroring.svg"
                     },
                     "Start_Times": {
@@ -328,7 +477,11 @@
                     ],
                     "Pole_Code": "NOR",
                     "Fastest_Lap_Code": "LEC",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 18.85
+                    }
                 },
                 {
                     "Id": "2026_12",
@@ -337,9 +490,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "zandvoort",
+                        "Full_Name": "Circuit Zandvoort",
                         "City": "Zandvoort",
                         "Country_Code": "NLD",
                         "Country_Name": "Netherlands",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.259,
+                        "Turns": 14,
+                        "Scheduled_Laps": 72,
+                        "Race_Distance_Km": 306.587,
                         "Svg_Path": "src/circuits/zandvoort.svg"
                     },
                     "Start_Times": {
@@ -361,7 +521,11 @@
                     ],
                     "Pole_Code": "NOR",
                     "Fastest_Lap_Code": "LEC",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 18.52
+                    }
                 },
                 {
                     "Id": "2026_13",
@@ -370,9 +534,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "monza",
+                        "Full_Name": "Autodromo Nazionale Monza",
                         "City": "Monza",
                         "Country_Code": "ITA",
                         "Country_Name": "Italy",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.793,
+                        "Turns": 11,
+                        "Scheduled_Laps": 53,
+                        "Race_Distance_Km": 306.72,
                         "Svg_Path": "src/circuits/monza.svg"
                     },
                     "Start_Times": {
@@ -393,7 +564,11 @@
                     ],
                     "Pole_Code": "GAS",
                     "Fastest_Lap_Code": "ANT",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ANT",
+                        "Driver_Name": "K. Antonelli",
+                        "Percentage": 38.87
+                    }
                 },
                 {
                     "Id": "2026_14",
@@ -402,9 +577,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "madring",
+                        "Full_Name": "Circuito de Madring",
                         "City": "Madrid",
                         "Country_Code": "ESP",
                         "Country_Name": "Spain",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.416,
+                        "Turns": 22,
+                        "Scheduled_Laps": 57,
+                        "Race_Distance_Km": 308.524,
                         "Svg_Path": "src/circuits/madring.svg"
                     },
                     "Start_Times": {
@@ -425,7 +607,11 @@
                     ],
                     "Pole_Code": "NOR",
                     "Fastest_Lap_Code": "RUS",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 23.38
+                    }
                 },
                 {
                     "Id": "2026_15",
@@ -434,9 +620,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "baku",
+                        "Full_Name": "Baku City Circuit",
                         "City": "Baku",
                         "Country_Code": "AZE",
                         "Country_Name": "Azerbaijan",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 6.003,
+                        "Turns": 20,
+                        "Scheduled_Laps": 51,
+                        "Race_Distance_Km": 306.049,
                         "Svg_Path": "src/circuits/baku.svg"
                     },
                     "Start_Times": {
@@ -457,18 +650,29 @@
                     ],
                     "Pole_Code": "RUS",
                     "Fastest_Lap_Code": "RUS",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 26.6
+                    }
                 },
                 {
                     "Id": "2026_16",
                     "Race_Id": 16,
-                    "Event_Name": "Bahrain Grand Prix in Malaysia",
+                    "Event_Name": "Bahrain Grand Prix",
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "sepang",
-                        "City": "Kuala Lumpur",
+                        "Full_Name": "Sepang International Circuit",
+                        "City": "Sepang",
                         "Country_Code": "MYS",
                         "Country_Name": "Malaysia",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.543,
+                        "Turns": 15,
+                        "Scheduled_Laps": 55,
+                        "Race_Distance_Km": 304.865,
                         "Svg_Path": "src/circuits/sepang.svg"
                     },
                     "Start_Times": {
@@ -489,7 +693,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 25.93
+                    }
                 },
                 {
                     "Id": "2026_17",
@@ -498,9 +706,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "marina-bay",
-                        "City": "Marina Bay",
+                        "Full_Name": "Marina Bay Street Circuit",
+                        "City": "Singapore",
                         "Country_Code": "SGP",
                         "Country_Name": "Singapore",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 4.927,
+                        "Turns": 19,
+                        "Scheduled_Laps": 62,
+                        "Race_Distance_Km": 305.337,
                         "Svg_Path": "src/circuits/marina-bay.svg"
                     },
                     "Start_Times": {
@@ -522,7 +737,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "LEC",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 30.65
+                    }
                 },
                 {
                     "Id": "2026_18",
@@ -531,9 +750,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "austin",
+                        "Full_Name": "Circuit of the Americas",
                         "City": "Austin",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "RACE",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 5.513,
+                        "Turns": 20,
+                        "Scheduled_Laps": 56,
+                        "Race_Distance_Km": 308.405,
                         "Svg_Path": "src/circuits/austin.svg"
                     },
                     "Start_Times": {
@@ -554,18 +780,29 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "LEC",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "LEC",
+                        "Driver_Name": "C. Leclerc",
+                        "Percentage": 25.7
+                    }
                 },
                 {
                     "Id": "2026_19",
                     "Race_Id": 19,
-                    "Event_Name": "Mexico City Grand Prix",
+                    "Event_Name": "Mexican Grand Prix",
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "mexico-city",
+                        "Full_Name": "Autódromo Hermanos Rodríguez",
                         "City": "Mexico City",
                         "Country_Code": "MEX",
                         "Country_Name": "Mexico",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.304,
+                        "Turns": 17,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 305.354,
                         "Svg_Path": "src/circuits/mexico-city.svg"
                     },
                     "Start_Times": {
@@ -586,7 +823,11 @@
                     ],
                     "Pole_Code": "HAM",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 20.6
+                    }
                 },
                 {
                     "Id": "2026_20",
@@ -638,9 +879,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "las-vegas",
+                        "Full_Name": "Las Vegas Street Circuit",
                         "City": "Las Vegas",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 6.201,
+                        "Turns": 17,
+                        "Scheduled_Laps": 50,
+                        "Race_Distance_Km": 309.958,
                         "Svg_Path": "src/circuits/las-vegas.svg"
                     },
                     "Start_Times": {
@@ -661,7 +909,11 @@
                     ],
                     "Pole_Code": "ANT",
                     "Fastest_Lap_Code": "LAW",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 26.73
+                    }
                 }
             ]
         },
