@@ -44,7 +44,10 @@ jobs:
           python -u scripts/get_round_data.py $ARGS
 
       - name: Validate telemetry dataset
-        run: python scripts/validate_data.py
+        run: |
+          VAL_ARGS=""
+          if [ -n "${{ inputs.season }}" ]; then VAL_ARGS="--season ${{ inputs.season }}"; fi
+          python scripts/validate_data.py $VAL_ARGS
 
       - name: Sync remote, update README and push
         run: |
