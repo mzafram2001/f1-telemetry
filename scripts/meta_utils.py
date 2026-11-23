@@ -167,4 +167,46 @@ def fetch_session_results(season, race_id, session_type):
             "Grid_Position": int(grid_raw) if str(grid_raw).isdigit() and int(grid_raw) > 0 else None,
             "Finish_Position": int(pos_raw) if str(pos_raw).isdigit() else None,
             "Status": row.get("status", "Finished" if session_type == "Qualifying" else "Unknown"),
-            "L
+            "Laps_Completed": int(row["laps"]) if str(row.get("laps", "")).isdigit() else None,
+            "Q1": row.get("Q1"),
+            "Q2": row.get("Q2"),
+            "Q3": row.get("Q3"),
+        }
+
+    return results_by_code
+
+
+def build_meta(season, race_id, session_type, race_info, openf1_session_key=None):
+    """Construye el bloque Meta alineado con f1-fantasy en Pascal_Snake_Case."""
+    circuit = race_info["Circuit"]
+    loc = circuit["Location"]
+    jolpica_cid = circuit["circuitId"]
+
+    svg_slug, country_code = CIRCUIT_MAP.get(jolpica_cid, (jolpica_cid.replace("_", "-"), None))
+    country_name = COUNTRY_NAME_OVERRIDES.get(loc["country"], loc["country"])
+    sprint_obj = race_info.get("Sprint")
+    sprint_quali_obj = race_info.get("SprintQualifying") or race_info.get("SprintShootout")
+
+    return {
+        "Id": f"{season}_{race_id:02d}",
+        "Season": season,
+        "Race_Id": race_id,
+        "Event_Name": race_info["raceName"],
+        "Session_Type": session_type,
+        "Is_Sprint": sprint_obj is not None,
+        "OpenF1_Session_Key": openf1_session_key,
+        "Circuit": {
+            "Id": svg_slug,
+            "City": loc["locality"],
+            "Country_Code": country_code,
+            "Country_Name": country_name,
+            "Svg_Path": f"src/circuits/{svg_slug}.svg",
+        },
+        "Start_Times": {
+            "Qualifying": to_iso_utc(race_info.get("Qualifying")),
+            "Sprint_Qualifying": to_iso_utc(sprint_quali_obj),
+            "Sprint": to_iso_utc(sprint_obj),
+            "Race": to_iso_utc({"date": race_info.get("date"), "time": race_info.get("time")}),
+        },
+        "Generated_At": datetime.now().isoformat(),
+    }
