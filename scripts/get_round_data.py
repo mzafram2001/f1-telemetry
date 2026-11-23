@@ -4,6 +4,7 @@ import json
 import math
 import os
 import statistics
+import sys
 import time
 from datetime import datetime, timedelta, timezone
 from urllib.error import HTTPError, URLError
@@ -595,6 +596,32 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
     }
 
 
+def is_file_up_to_date(out_path):
+    """Comprueba si el JSON existente ya tiene el esquema completo (Lap_Times, Distance_Pct, Drs, X, Y)."""
+    if not os.path.exists(out_path):
+        return False
+    try:
+        with open(out_path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+        drivers = payload.get("Drivers", [])
+        if not drivers:
+            return False
+        for d in drivers:
+            if "Lap_Times" not in d:
+                return False
+            trace = d.get("Fastest_Lap_Trace")
+            if trace is not None and (
+                "Distance_Pct" not in trace
+                or "Drs" not in trace
+                or "X" not in trace
+                or "Y" not in trace
+            ):
+                return False
+        return True
+    except Exception:
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="Descarga telemetría F1 desde OpenF1 + Jolpica.")
     parser.add_argument("--season", type=int, default=datetime.now().year)
@@ -609,7 +636,7 @@ def main():
     schedule = fetch_season_schedule(season)
     if not schedule:
         print(f"❌ No se pudo obtener el calendario de Jolpica para {season}.")
-        return
+        sys.exit(1)
 
     openf1 = OpenF1Client()
     try:
@@ -641,7 +668,7 @@ def main():
             out_dir = f"data/{season}/round_{race_id:02d}"
             out_path = f"{out_dir}/{SESSION_FILES[session_type]}"
 
-            if os.path.exists(out_path) and not args.force:
+            if is_file_up_to_date(out_path) and not args.force:
                 continue
 
             sched_obj = start_map.get(session_type)
