@@ -1,5 +1,5 @@
 {
-    "Generated_At": "2026-11-23T16:57:27.180716",
+    "Generated_At": "2026-11-23T19:06:06.755206",
     "Seasons": [
         {
             "Season": 2026,
@@ -3019,9 +3019,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "bahrain",
+                        "Full_Name": "Bahrain International Circuit",
                         "City": "Sakhir",
                         "Country_Code": "BHR",
                         "Country_Name": "Bahrain",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.412,
+                        "Turns": 15,
+                        "Scheduled_Laps": 57,
+                        "Race_Distance_Km": 308.238,
                         "Svg_Path": "src/circuits/bahrain.svg"
                     },
                     "Start_Times": {
@@ -3042,7 +3049,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "ZHO",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ALO",
+                        "Driver_Name": "F. Alonso",
+                        "Percentage": 53.28
+                    }
                 },
                 {
                     "Id": "2023_02",
@@ -3051,9 +3062,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "jeddah",
+                        "Full_Name": "Jeddah Corniche Circuit",
                         "City": "Jeddah",
                         "Country_Code": "SAU",
                         "Country_Name": "Saudi Arabia",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 6.174,
+                        "Turns": 27,
+                        "Scheduled_Laps": 50,
+                        "Race_Distance_Km": 308.45,
                         "Svg_Path": "src/circuits/jeddah.svg"
                     },
                     "Start_Times": {
@@ -3074,7 +3092,11 @@
                     ],
                     "Pole_Code": "PER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 26.25
+                    }
                 },
                 {
                     "Id": "2023_03",
@@ -3083,13 +3105,20 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "melbourne",
+                        "Full_Name": "Albert Park Circuit",
                         "City": "Melbourne",
                         "Country_Code": "AUS",
                         "Country_Name": "Australia",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.278,
+                        "Turns": 14,
+                        "Scheduled_Laps": 58,
+                        "Race_Distance_Km": 306.124,
                         "Svg_Path": "src/circuits/melbourne.svg"
                     },
                     "Start_Times": {
-                        "Qualifying": "2023-04-01T05:00:00Z",
+                        "Qualifying": "2023-04-01T06:00:00Z",
                         "Sprint_Qualifying": null,
                         "Sprint": null,
                         "Race": "2023-04-02T05:00:00Z"
@@ -3106,7 +3135,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "PER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PER",
+                        "Driver_Name": "S. Pérez",
+                        "Percentage": 21.31
+                    }
                 },
                 {
                     "Id": "2023_04",
@@ -3115,14 +3148,21 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "baku",
+                        "Full_Name": "Baku City Circuit",
                         "City": "Baku",
                         "Country_Code": "AZE",
                         "Country_Name": "Azerbaijan",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 6.003,
+                        "Turns": 20,
+                        "Scheduled_Laps": 51,
+                        "Race_Distance_Km": 306.049,
                         "Svg_Path": "src/circuits/baku.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2023-04-28T13:00:00Z",
-                        "Sprint_Qualifying": "2023-04-29T09:30:00Z",
+                        "Sprint_Qualifying": "2023-04-29T08:30:00Z",
                         "Sprint": "2023-04-29T13:30:00Z",
                         "Race": "2023-04-30T11:00:00Z"
                     },
@@ -3139,7 +3179,11 @@
                     ],
                     "Pole_Code": "LEC",
                     "Fastest_Lap_Code": "RUS",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PER",
+                        "Driver_Name": "S. Pérez",
+                        "Percentage": 29.11
+                    }
                 },
                 {
                     "Id": "2023_05",
@@ -3148,9 +3192,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "miami",
-                        "City": "Miami",
+                        "Full_Name": "Miami International Autodrome",
+                        "City": "Miami Gardens",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 5.412,
+                        "Turns": 19,
+                        "Scheduled_Laps": 57,
+                        "Race_Distance_Km": 308.326,
                         "Svg_Path": "src/circuits/miami.svg"
                     },
                     "Start_Times": {
@@ -3171,7 +3222,11 @@
                     ],
                     "Pole_Code": "PER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 27.12
+                    }
                 },
                 {
                     "Id": "2023_06",
@@ -3180,9 +3235,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "monaco",
+                        "Full_Name": "Circuit de Monaco",
                         "City": "Monte Carlo",
                         "Country_Code": "MCO",
                         "Country_Name": "Monaco",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 3.337,
+                        "Turns": 19,
+                        "Scheduled_Laps": 78,
+                        "Race_Distance_Km": 260.286,
                         "Svg_Path": "src/circuits/monaco.svg"
                     },
                     "Start_Times": {
@@ -3203,7 +3265,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "OCO",
+                        "Driver_Name": "E. Ocon",
+                        "Percentage": 23.46
+                    }
                 },
                 {
                     "Id": "2023_07",
@@ -3212,9 +3278,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "catalunya",
-                        "City": "Barcelona",
+                        "Full_Name": "Circuit de Barcelona-Catalunya",
+                        "City": "Montmeló",
                         "Country_Code": "ESP",
                         "Country_Name": "Spain",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.657,
+                        "Turns": 14,
+                        "Scheduled_Laps": 66,
+                        "Race_Distance_Km": 307.236,
                         "Svg_Path": "src/circuits/catalunya.svg"
                     },
                     "Start_Times": {
@@ -3235,7 +3308,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "HAM",
+                        "Driver_Name": "L. Hamilton",
+                        "Percentage": 24.65
+                    }
                 },
                 {
                     "Id": "2023_08",
@@ -3244,9 +3321,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "montreal",
+                        "Full_Name": "Circuit Gilles Villeneuve",
                         "City": "Montreal",
                         "Country_Code": "CAN",
                         "Country_Name": "Canada",
+                        "Type": "STREET",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.361,
+                        "Turns": 14,
+                        "Scheduled_Laps": 70,
+                        "Race_Distance_Km": 305.27,
                         "Svg_Path": "src/circuits/montreal.svg"
                     },
                     "Start_Times": {
@@ -3267,7 +3351,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "PER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ALB",
+                        "Driver_Name": "A. Albon",
+                        "Percentage": 28.7
+                    }
                 },
                 {
                     "Id": "2023_09",
@@ -3276,14 +3364,21 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "spielberg",
+                        "Full_Name": "Red Bull Ring",
                         "City": "Spielberg",
                         "Country_Code": "AUT",
                         "Country_Name": "Austria",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.318,
+                        "Turns": 10,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 306.452,
                         "Svg_Path": "src/circuits/spielberg.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2023-06-30T15:00:00Z",
-                        "Sprint_Qualifying": "2023-07-01T10:30:00Z",
+                        "Sprint_Qualifying": "2023-07-01T10:00:00Z",
                         "Sprint": "2023-07-01T14:30:00Z",
                         "Race": "2023-07-02T13:00:00Z"
                     },
@@ -3300,7 +3395,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 26.1
+                    }
                 },
                 {
                     "Id": "2023_10",
@@ -3309,9 +3408,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "silverstone",
+                        "Full_Name": "Silverstone Circuit",
                         "City": "Silverstone",
                         "Country_Code": "GBR",
                         "Country_Name": "United Kingdom",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.891,
+                        "Turns": 18,
+                        "Scheduled_Laps": 52,
+                        "Race_Distance_Km": 306.198,
                         "Svg_Path": "src/circuits/silverstone.svg"
                     },
                     "Start_Times": {
@@ -3332,7 +3438,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 45.5
+                    }
                 },
                 {
                     "Id": "2023_11",
@@ -3341,9 +3451,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "hungaroring",
+                        "Full_Name": "Hungaroring",
                         "City": "Budapest",
                         "Country_Code": "HUN",
                         "Country_Name": "Hungary",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.381,
+                        "Turns": 14,
+                        "Scheduled_Laps": 70,
+                        "Race_Distance_Km": 306.63,
                         "Svg_Path": "src/circuits/hungaroring.svg"
                     },
                     "Start_Times": {
@@ -3364,7 +3481,11 @@
                     ],
                     "Pole_Code": "HAM",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PER",
+                        "Driver_Name": "S. Pérez",
+                        "Percentage": 20.73
+                    }
                 },
                 {
                     "Id": "2023_12",
@@ -3373,15 +3494,22 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "spa-francorchamps",
+                        "Full_Name": "Circuit de Spa-Francorchamps",
                         "City": "Spa",
                         "Country_Code": "BEL",
                         "Country_Name": "Belgium",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 7.004,
+                        "Turns": 19,
+                        "Scheduled_Laps": 44,
+                        "Race_Distance_Km": 308.052,
                         "Svg_Path": "src/circuits/spa-francorchamps.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2023-07-28T15:00:00Z",
-                        "Sprint_Qualifying": "2023-07-29T10:30:00Z",
-                        "Sprint": "2023-07-29T14:30:00Z",
+                        "Sprint_Qualifying": "2023-07-29T10:00:00Z",
+                        "Sprint": "2023-07-29T15:05:00Z",
                         "Race": "2023-07-30T13:00:00Z"
                     },
                     "Sessions": [
@@ -3397,7 +3525,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 15.46
+                    }
                 },
                 {
                     "Id": "2023_13",
@@ -3406,9 +3538,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "zandvoort",
+                        "Full_Name": "Circuit Zandvoort",
                         "City": "Zandvoort",
                         "Country_Code": "NLD",
                         "Country_Name": "Netherlands",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.259,
+                        "Turns": 14,
+                        "Scheduled_Laps": 72,
+                        "Race_Distance_Km": 306.587,
                         "Svg_Path": "src/circuits/zandvoort.svg"
                     },
                     "Start_Times": {
@@ -3429,7 +3568,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "ALO",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "ALO",
+                        "Driver_Name": "F. Alonso",
+                        "Percentage": 20.87
+                    }
                 },
                 {
                     "Id": "2023_14",
@@ -3438,9 +3581,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "monza",
+                        "Full_Name": "Autodromo Nazionale Monza",
                         "City": "Monza",
                         "Country_Code": "ITA",
                         "Country_Name": "Italy",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.793,
+                        "Turns": 11,
+                        "Scheduled_Laps": 51,
+                        "Race_Distance_Km": 295.134,
                         "Svg_Path": "src/circuits/monza.svg"
                     },
                     "Start_Times": {
@@ -3461,7 +3611,11 @@
                     ],
                     "Pole_Code": "SAI",
                     "Fastest_Lap_Code": "PIA",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "SAI",
+                        "Driver_Name": "C. Sainz Jr.",
+                        "Percentage": 31.48
+                    }
                 },
                 {
                     "Id": "2023_15",
@@ -3470,9 +3624,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "marina-bay",
-                        "City": "Marina Bay",
+                        "Full_Name": "Marina Bay Street Circuit",
+                        "City": "Singapore",
                         "Country_Code": "SGP",
                         "Country_Name": "Singapore",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 4.94,
+                        "Turns": 19,
+                        "Scheduled_Laps": 62,
+                        "Race_Distance_Km": 306.143,
                         "Svg_Path": "src/circuits/marina-bay.svg"
                     },
                     "Start_Times": {
@@ -3493,7 +3654,11 @@
                     ],
                     "Pole_Code": "SAI",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "SAI",
+                        "Driver_Name": "C. Sainz Jr.",
+                        "Percentage": 21.15
+                    }
                 },
                 {
                     "Id": "2023_16",
@@ -3502,9 +3667,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "suzuka",
+                        "Full_Name": "Suzuka Circuit",
                         "City": "Suzuka",
                         "Country_Code": "JPN",
                         "Country_Name": "Japan",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.807,
+                        "Turns": 18,
+                        "Scheduled_Laps": 53,
+                        "Race_Distance_Km": 307.471,
                         "Svg_Path": "src/circuits/suzuka.svg"
                     },
                     "Start_Times": {
@@ -3525,7 +3697,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PIA",
+                        "Driver_Name": "O. Piastri",
+                        "Percentage": 28.23
+                    }
                 },
                 {
                     "Id": "2023_17",
@@ -3534,9 +3710,16 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "lusail",
+                        "Full_Name": "Lusail International Circuit",
                         "City": "Lusail",
                         "Country_Code": "QAT",
                         "Country_Name": "Qatar",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 5.419,
+                        "Turns": 16,
+                        "Scheduled_Laps": 57,
+                        "Race_Distance_Km": 308.611,
                         "Svg_Path": "src/circuits/lusail.svg"
                     },
                     "Start_Times": {
@@ -3558,7 +3741,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "PIA",
+                        "Driver_Name": "O. Piastri",
+                        "Percentage": 27.88
+                    }
                 },
                 {
                     "Id": "2023_18",
@@ -3567,14 +3754,21 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "austin",
+                        "Full_Name": "Circuit of the Americas",
                         "City": "Austin",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "RACE",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 5.513,
+                        "Turns": 20,
+                        "Scheduled_Laps": 56,
+                        "Race_Distance_Km": 308.405,
                         "Svg_Path": "src/circuits/austin.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2023-10-20T21:00:00Z",
-                        "Sprint_Qualifying": "2023-10-21T18:00:00Z",
+                        "Sprint_Qualifying": "2023-10-21T17:30:00Z",
                         "Sprint": "2023-10-21T22:00:00Z",
                         "Race": "2023-10-22T19:00:00Z"
                     },
@@ -3591,18 +3785,29 @@
                     ],
                     "Pole_Code": "LEC",
                     "Fastest_Lap_Code": "TSU",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 25.96
+                    }
                 },
                 {
                     "Id": "2023_19",
                     "Race_Id": 19,
-                    "Event_Name": "Mexico City Grand Prix",
+                    "Event_Name": "Mexican Grand Prix",
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "mexico-city",
+                        "Full_Name": "Autódromo Hermanos Rodríguez",
                         "City": "Mexico City",
                         "Country_Code": "MEX",
                         "Country_Name": "Mexico",
+                        "Type": "RACE",
+                        "Direction": "CLOCKWISE",
+                        "Length_Km": 4.304,
+                        "Turns": 17,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 305.354,
                         "Svg_Path": "src/circuits/mexico-city.svg"
                     },
                     "Start_Times": {
@@ -3623,7 +3828,11 @@
                     ],
                     "Pole_Code": "LEC",
                     "Fastest_Lap_Code": "HAM",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 29.49
+                    }
                 },
                 {
                     "Id": "2023_20",
@@ -3632,14 +3841,21 @@
                     "Is_Sprint": true,
                     "Circuit": {
                         "Id": "interlagos",
+                        "Full_Name": "Autódromo José Carlos Pace",
                         "City": "São Paulo",
                         "Country_Code": "BRA",
                         "Country_Name": "Brazil",
+                        "Type": "RACE",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 4.309,
+                        "Turns": 15,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 305.879,
                         "Svg_Path": "src/circuits/interlagos.svg"
                     },
                     "Start_Times": {
                         "Qualifying": "2023-11-03T18:00:00Z",
-                        "Sprint_Qualifying": "2023-11-04T14:30:00Z",
+                        "Sprint_Qualifying": "2023-11-04T14:00:00Z",
                         "Sprint": "2023-11-04T18:30:00Z",
                         "Race": "2023-11-05T17:00:00Z"
                     },
@@ -3656,7 +3872,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "NOR",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "NOR",
+                        "Driver_Name": "L. Norris",
+                        "Percentage": 26.06
+                    }
                 },
                 {
                     "Id": "2023_21",
@@ -3665,13 +3885,20 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "las-vegas",
+                        "Full_Name": "Las Vegas Street Circuit",
                         "City": "Las Vegas",
                         "Country_Code": "USA",
-                        "Country_Name": "United States",
+                        "Country_Name": "United States of America",
+                        "Type": "STREET",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 6.201,
+                        "Turns": 17,
+                        "Scheduled_Laps": 50,
+                        "Race_Distance_Km": 309.958,
                         "Svg_Path": "src/circuits/las-vegas.svg"
                     },
                     "Start_Times": {
-                        "Qualifying": "2023-11-17T08:00:00Z",
+                        "Qualifying": "2023-11-18T08:00:00Z",
                         "Sprint_Qualifying": null,
                         "Sprint": null,
                         "Race": "2023-11-19T06:00:00Z"
@@ -3688,7 +3915,11 @@
                     ],
                     "Pole_Code": "LEC",
                     "Fastest_Lap_Code": "PIA",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "LEC",
+                        "Driver_Name": "C. Leclerc",
+                        "Percentage": 21.6
+                    }
                 },
                 {
                     "Id": "2023_22",
@@ -3697,9 +3928,16 @@
                     "Is_Sprint": false,
                     "Circuit": {
                         "Id": "yas-marina",
+                        "Full_Name": "Yas Marina Circuit",
                         "City": "Abu Dhabi",
                         "Country_Code": "ARE",
                         "Country_Name": "United Arab Emirates",
+                        "Type": "RACE",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 5.281,
+                        "Turns": 16,
+                        "Scheduled_Laps": 58,
+                        "Race_Distance_Km": 306.183,
                         "Svg_Path": "src/circuits/yas-marina.svg"
                     },
                     "Start_Times": {
@@ -3720,7 +3958,11 @@
                     ],
                     "Pole_Code": "VER",
                     "Fastest_Lap_Code": "VER",
-                    "Driver_Of_The_Day": null
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "TSU",
+                        "Driver_Name": "Y. Tsunoda",
+                        "Percentage": 24.19
+                    }
                 }
             ]
         }
