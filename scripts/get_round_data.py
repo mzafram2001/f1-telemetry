@@ -1,5 +1,7 @@
 import argparse
+import bisect
 import json
+import math
 import os
 import statistics
 import time
@@ -58,7 +60,6 @@ class OpenF1Client:
                     return json.loads(resp.read().decode("utf-8"))
             except HTTPError as e:
                 if e.code == 404:
-                    # OpenF1 devuelve 404 cuando no hay registros para el filtro
                     return []
                 if e.code in (401, 403):
                     raise OpenF1LiveSessionError(
@@ -128,6 +129,7 @@ def build_empty_driver_entry(code, info, status, grid_pos=None, finish_pos=None,
         "Pit_Stops": 0,
         "Avg_Pit_Lane_Sec": None,
         "Avg_Pit_Stop_Sec": None,
+        "Lap_Times": [],
         "Stints": [],
         "Fastest_Lap_Trace": None,
     }
@@ -182,6 +184,20 @@ def summarize_weather(weather_rows):
     }
 
 
+def extract_lap_times(driver_laps):
+    """Devuelve lista ordenada vuelta a vuelta (1..N) con duración en segundos o None."""
+    by_num = {}
+    for lap in driver_laps:
+        num = lap.get("lap_number")
+        if isinstance(num, int) and num > 0:
+            dur = lap.get("lap_duration")
+            by_num[num] = round(float(dur), 3) if dur is not None else None
+    if not by_num:
+        return []
+    max_lap = max(by_num.keys())
+    return [by_num.get(n) for n in range(1, max_lap + 1)]
+
+
 def compute_avg_pace(driver_laps, session_type):
     """Calcula ritmo medio limpio descartando vueltas de salida y coches de seguridad."""
     clean = [
@@ -204,10 +220,74 @@ def compute_avg_pace(driver_laps, session_type):
     return round(statistics.mean(clean), 3)
 
 
-def build_trace_and_metrics(car_rows, target_samples=100):
-    """Extrae métricas de acelerador/freno/velocidad y traza submuestreada de la vuelta rápida."""
+def align_coordinates(sampled_car_rows, loc_rows):
+    """Empareja cada muestra de car_data con su coordenada (x, y) más cercana en /location."""
+    valid_locs = []
+    for r in loc_rows:
+        dt = parse_iso_utc(r.get("date"))
+        if dt and r.get("x") is not None and r.get("y") is not None:
+            valid_locs.append((dt.timestamp(), int(round(r["x"])), int(round(r["y"]))))
+
+    if not valid_locs:
+        return None, None
+
+    valid_locs.sort(key=lambda item: item[0])
+    loc_ts = [item[0] for item in valid_locs]
+
+    xs = []
+    ys = []
+    for row in sampled_car_rows:
+        dt = parse_iso_utc(row.get("date"))
+        if not dt:
+            xs.append(valid_locs[0][1])
+            ys.append(valid_locs[0][2])
+            continue
+        t = dt.timestamp()
+        idx = bisect.bisect_left(loc_ts, t)
+        if idx == 0:
+            chosen = valid_locs[0]
+        elif idx >= len(valid_locs):
+            chosen = valid_locs[-1]
+        else:
+            before = valid_locs[idx - 1]
+            after = valid_locs[idx]
+            chosen = before if (t - before[0]) <= (after[0] - t) else after
+        xs.append(chosen[1])
+        ys.append(chosen[2])
+
+    return xs, ys
+
+
+def compute_distance_pct(xs, ys, speeds):
+    """Calcula el porcentaje acumulado de vuelta (0.0 - 100.0) usando coordenadas o velocidad."""
+    n = len(speeds)
+    if n == 0:
+        return []
+    if n == 1:
+        return [0.0]
+
+    cum = [0.0]
+    if xs and ys and len(xs) == n:
+        for i in range(1, n):
+            step = math.hypot(xs[i] - xs[i - 1], ys[i] - ys[i - 1])
+            cum.append(cum[-1] + step)
+
+    if cum[-1] <= 0.0:
+        cum = [0.0]
+        for i in range(1, n):
+            avg_v = max((speeds[i] + speeds[i - 1]) * 0.5, 1.0)
+            cum.append(cum[-1] + avg_v)
+
+    total = cum[-1]
+    return [round((d / total) * 100.0, 2) for d in cum]
+
+
+def build_trace_and_metrics(car_rows, loc_rows=None, target_samples=100):
+    """Extrae métricas agregadas y traza completa de 100 muestras de la vuelta rápida."""
     if not car_rows:
         return None, None, None, None
+
+    car_rows = sorted(car_rows, key=lambda r: r.get("date") or "")
 
     speeds = [int(r["speed"]) for r in car_rows if r.get("speed") is not None]
     throttles = [int(r["throttle"]) for r in car_rows if r.get("throttle") is not None]
@@ -228,13 +308,21 @@ def build_trace_and_metrics(car_rows, target_samples=100):
         indices = [round(i * (n - 1) / (target_samples - 1)) for i in range(target_samples)]
         sampled = [car_rows[idx] for idx in indices]
 
+    sampled_speeds = [int(r.get("speed") or 0) for r in sampled]
+    xs, ys = align_coordinates(sampled, loc_rows or [])
+    dist_pct = compute_distance_pct(xs, ys, sampled_speeds)
+
     trace = {
         "Samples": len(sampled),
-        "Speed_Kmh": [int(r.get("speed") or 0) for r in sampled],
+        "Distance_Pct": dist_pct,
+        "Speed_Kmh": sampled_speeds,
         "Throttle_Pct": [int(r.get("throttle") or 0) for r in sampled],
         "Brake_Pct": [100 if (r.get("brake") or 0) > 0 else 0 for r in sampled],
         "Gear": [int(r.get("n_gear") or 0) for r in sampled],
         "Rpm": [int(r.get("rpm") or 0) for r in sampled],
+        "Drs": [int(r.get("drs") or 0) for r in sampled],
+        "X": xs,
+        "Y": ys,
     }
     return trace, top_speed, full_throttle_pct, brake_pct
 
@@ -304,7 +392,7 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
             vals = [float(l[field]) for l in d_laps if l.get(field) is not None]
             return round(min(vals), 3) if vals else None
 
-        # Telemetría de la vuelta rápida
+        # Telemetría + coordenadas de la vuelta rápida
         trace = None
         top_speed = None
         full_throttle_pct = None
@@ -321,8 +409,17 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
                     params={"session_key": session_key, "driver_number": drv_num},
                     raw_query=raw_q,
                 )
+                loc_rows = (
+                    openf1.get(
+                        "location",
+                        params={"session_key": session_key, "driver_number": drv_num},
+                        raw_query=raw_q,
+                    )
+                    if car_rows
+                    else []
+                )
                 trace, top_speed, full_throttle_pct, brake_pct = build_trace_and_metrics(
-                    car_rows, target_samples=samples
+                    car_rows, loc_rows=loc_rows, target_samples=samples
                 )
 
         # Fallback de velocidad punta desde speed traps si no hubo car_data
@@ -395,6 +492,7 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
             "Pit_Stops": len(d_pits),
             "Avg_Pit_Lane_Sec": round(statistics.mean(lane_durs), 3) if lane_durs else None,
             "Avg_Pit_Stop_Sec": round(statistics.mean(stop_durs), 3) if stop_durs else None,
+            "Lap_Times": extract_lap_times(d_laps),
             "Stints": formatted_stints,
             "Fastest_Lap_Trace": trace,
         }
