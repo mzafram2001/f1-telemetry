@@ -3,10 +3,12 @@ import bisect
 import json
 import math
 import os
+import re
 import statistics
 import sys
 import time
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -26,6 +28,11 @@ SESSION_FILES = {
     "Sprint": "sprint.json",
     "Race": "race.json",
 }
+SESSION_ORDER = [
+    ("Qualifying", "qualifying.json"),
+    ("Sprint", "sprint.json"),
+    ("Race", "race.json"),
+]
 DNS_STATUS_ALIASES = {"did not start", "dns", "withdrew", "wd", "injured", "illness"}
 
 
@@ -106,6 +113,38 @@ def normalize_status(raw_status):
     return cleaned
 
 
+def load_json_safe(path):
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def extract_results_from_payload(payload):
+    """Extrae clasificación oficial indexada por Driver_Code desde un JSON ya guardado."""
+    if not payload:
+        return {}
+    results = {}
+    for d in payload.get("Drivers", []):
+        code = (d.get("Driver_Code") or "").upper()
+        if not code or code == "N/A":
+            continue
+        results[code] = {
+            "Driver_Name": d.get("Driver_Name"),
+            "Driver_Number": d.get("Driver_Number"),
+            "Team_Name": d.get("Team_Name", "N/A"),
+            "Team_Code": d.get("Team_Code", "N/A"),
+            "Grid_Position": d.get("Grid_Position"),
+            "Finish_Position": d.get("Finish_Position"),
+            "Status": d.get("Status"),
+            "Laps_Completed": d.get("Laps_Completed"),
+        }
+    return results
+
+
 def build_empty_driver_entry(code, info, status, grid_pos=None, finish_pos=None, laps=0):
     """Construye una entrada sin telemetría para pilotos DNS o retirados tras Qualifying."""
     return {
@@ -137,7 +176,7 @@ def build_empty_driver_entry(code, info, status, grid_pos=None, finish_pos=None,
 
 
 def match_openf1_session(openf1_sessions, session_type, scheduled_iso):
-    """Empareja la sesión oficial de Jolpica con su session_key en OpenF1."""
+    """Empareja la sesión oficial con su session_key en OpenF1."""
     target_dt = parse_iso_utc(scheduled_iso)
     if not target_dt:
         return None
@@ -328,11 +367,33 @@ def build_trace_and_metrics(car_rows, loc_rows=None, target_samples=100):
     return trace, top_speed, full_throttle_pct, brake_pct
 
 
-def process_session(openf1, season, race_id, session_type, race_info, openf1_session, samples):
-    session_key = openf1_session["session_key"]
-    print(f"  📡 Descargando {session_type} (session_key={session_key})...")
+def process_session(
+    openf1,
+    season,
+    race_id,
+    session_type,
+    samples,
+    race_info=None,
+    openf1_session=None,
+    existing_payload=None,
+    use_jolpica=True,
+):
+    session_key = (
+        openf1_session["session_key"]
+        if openf1_session
+        else (existing_payload or {}).get("Meta", {}).get("OpenF1_Session_Key")
+    )
+    if not session_key:
+        print(f"  ⚠️ Sin OpenF1_Session_Key para {season} R{race_id:02d} ({session_type}).")
+        return None
 
-    jolpica_results = fetch_session_results(season, race_id, session_type)
+    mode_label = "Jolpica + OpenF1" if use_jolpica else "solo OpenF1 + caché local"
+    print(f"  📡 Descargando {session_type} (session_key={session_key}, {mode_label})...")
+
+    jolpica_results = fetch_session_results(season, race_id, session_type) if use_jolpica else {}
+    if not jolpica_results and existing_payload:
+        jolpica_results = extract_results_from_payload(existing_payload)
+
     drivers_raw = openf1.get("drivers", {"session_key": session_key})
     laps_raw = openf1.get("laps", {"session_key": session_key})
     stints_raw = openf1.get("stints", {"session_key": session_key})
@@ -499,7 +560,7 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
         }
         processed_drivers.append(driver_entry)
 
-    # 1. Pilotos presentes en Jolpica-F1 que no emitieron en OpenF1 (DNS en parrilla)
+    # 1. Pilotos presentes en clasificación oficial/caché que no emitieron en OpenF1 (DNS)
     for code, j_res in jolpica_results.items():
         if code in processed_codes:
             continue
@@ -517,7 +578,11 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
 
     # 2. Pilotos que corrieron Qualifying pero se retiraron antes de la carrera -> DNS
     if session_type == "Race":
-        quali_results = fetch_session_results(season, race_id, "Qualifying")
+        quali_results = fetch_session_results(season, race_id, "Qualifying") if use_jolpica else {}
+        if not quali_results:
+            local_quali = load_json_safe(f"data/{season}/round_{race_id:02d}/qualifying.json")
+            quali_results = extract_results_from_payload(local_quali)
+
         for code, q_res in quali_results.items():
             if code in processed_codes:
                 continue
@@ -582,14 +647,21 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
     ]
     processed_teams.sort(key=lambda x: (x["Avg_Pace_Sec"] is None, x["Avg_Pace_Sec"] or 9999.0))
 
-    return {
-        "Meta": build_meta(
+    if race_info is not None:
+        meta_block = build_meta(
             season=season,
             race_id=race_id,
             session_type=session_type,
             race_info=race_info,
             openf1_session_key=session_key,
-        ),
+        )
+    else:
+        meta_block = dict((existing_payload or {}).get("Meta", {}))
+        meta_block["OpenF1_Session_Key"] = session_key
+        meta_block["Generated_At"] = datetime.now().isoformat()
+
+    return {
+        "Meta": meta_block,
         "Weather": summarize_weather(weather_raw),
         "Drivers": processed_drivers,
         "Teams": processed_teams,
@@ -598,28 +670,55 @@ def process_session(openf1, season, race_id, session_type, race_info, openf1_ses
 
 def is_file_up_to_date(out_path):
     """Comprueba si el JSON existente ya tiene el esquema completo (Lap_Times, Distance_Pct, Drs, X, Y)."""
-    if not os.path.exists(out_path):
+    payload = load_json_safe(out_path)
+    if not payload:
         return False
-    try:
-        with open(out_path, "r", encoding="utf-8") as f:
-            payload = json.load(f)
-        drivers = payload.get("Drivers", [])
-        if not drivers:
+    drivers = payload.get("Drivers", [])
+    if not drivers:
+        return False
+    for d in drivers:
+        if "Lap_Times" not in d:
             return False
-        for d in drivers:
-            if "Lap_Times" not in d:
-                return False
-            trace = d.get("Fastest_Lap_Trace")
-            if trace is not None and (
-                "Distance_Pct" not in trace
-                or "Drs" not in trace
-                or "X" not in trace
-                or "Y" not in trace
-            ):
-                return False
-        return True
-    except Exception:
-        return False
+        trace = d.get("Fastest_Lap_Trace")
+        if trace is not None and (
+            "Distance_Pct" not in trace
+            or "Drs" not in trace
+            or "X" not in trace
+            or "Y" not in trace
+        ):
+            return False
+    return True
+
+
+def collect_local_sessions(season, target_round=None):
+    """Lista las sesiones ya guardadas en disco para actualizarlas solo con OpenF1."""
+    season_dir = Path("data") / str(season)
+    if not season_dir.exists():
+        return []
+
+    items = []
+    for r_dir in sorted(season_dir.iterdir()):
+        if not r_dir.is_dir():
+            continue
+        match = re.fullmatch(r"round_(\d+)", r_dir.name)
+        if not match:
+            continue
+        race_id = int(match.group(1))
+        if target_round is not None and race_id != target_round:
+            continue
+        for session_type, filename in SESSION_ORDER:
+            path = r_dir / filename
+            if path.exists():
+                items.append((race_id, session_type, str(path)))
+    return items
+
+
+def save_payload(out_path, payload):
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=4, ensure_ascii=False)
+        f.write("\n")
+    print(f"  📁 Guardado: {out_path}")
 
 
 def main():
@@ -628,15 +727,14 @@ def main():
     parser.add_argument("--round", type=int, default=None, help="Procesar una sola ronda")
     parser.add_argument("--force", action="store_true", help="Sobreescribir archivos existentes")
     parser.add_argument("--samples", type=int, default=100, help="Puntos en Fastest_Lap_Trace")
+    parser.add_argument("--skip-jolpica", action="store_true", help="Actualizar archivos locales solo con OpenF1")
     args = parser.parse_args()
 
     season = args.season
     print(f"🚀 Comprobando rondas de telemetría para la temporada {season}...")
 
-    schedule = fetch_season_schedule(season)
-    if not schedule:
-        print(f"❌ No se pudo obtener el calendario de Jolpica para {season}.")
-        sys.exit(1)
+    schedule = {} if args.skip_jolpica else fetch_season_schedule(season)
+    use_jolpica = bool(schedule)
 
     openf1 = OpenF1Client()
     try:
@@ -645,6 +743,48 @@ def main():
         print(f"⏸️ {e} Saliendo sin error para reintentar en la próxima ejecución.")
         return
 
+    # Modo actualización local (cuando Jolpica está caído o se pasa --skip-jolpica)
+    if not use_jolpica:
+        local_sessions = collect_local_sessions(season, target_round=args.round)
+        if not local_sessions:
+            print(f"❌ No se pudo consultar Jolpica ni hay archivos locales en data/{season}/.")
+            sys.exit(1)
+
+        print(f"🔄 Jolpica no disponible. Actualizando {len(local_sessions)} sesiones locales solo con OpenF1...")
+        for race_id, session_type, out_path in local_sessions:
+            if is_file_up_to_date(out_path) and not args.force:
+                continue
+
+            existing_payload = load_json_safe(out_path)
+            if not existing_payload:
+                continue
+
+            event_name = existing_payload.get("Meta", {}).get("Event_Name", f"Round {race_id:02d}")
+            print(f"\n🏁 {season} Ronda {race_id:02d} — {event_name} [{session_type}] (local)")
+
+            try:
+                payload = process_session(
+                    openf1=openf1,
+                    season=season,
+                    race_id=race_id,
+                    session_type=session_type,
+                    samples=args.samples,
+                    race_info=None,
+                    openf1_session=None,
+                    existing_payload=existing_payload,
+                    use_jolpica=False,
+                )
+            except OpenF1LiveSessionError as e:
+                print(f"⏸️ {e} Deteniendo descarga limpia.")
+                return
+
+            if payload:
+                save_payload(out_path, payload)
+
+        print("\n✅ Actualización local finalizada.")
+        return
+
+    # Modo normal (Jolpica + OpenF1)
     now_utc = datetime.now(timezone.utc)
     rounds_to_run = [args.round] if args.round else sorted(schedule.keys())
 
@@ -687,6 +827,7 @@ def main():
                 print(f"⚠️ Ronda {race_id:02d} ({session_type}): aún sin sesión en OpenF1.")
                 continue
 
+            existing_payload = load_json_safe(out_path)
             print(f"\n🏁 {season} Ronda {race_id:02d} — {race_info['raceName']} [{session_type}]")
             try:
                 payload = process_session(
@@ -694,23 +835,18 @@ def main():
                     season=season,
                     race_id=race_id,
                     session_type=session_type,
+                    samples=args.samples,
                     race_info=race_info,
                     openf1_session=openf1_session,
-                    samples=args.samples,
+                    existing_payload=existing_payload,
+                    use_jolpica=True,
                 )
             except OpenF1LiveSessionError as e:
                 print(f"⏸️ {e} Deteniendo descarga limpia.")
                 return
 
-            if not payload:
-                continue
-
-            os.makedirs(out_dir, exist_ok=True)
-            with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(payload, f, indent=4, ensure_ascii=False)
-                f.write("\n")
-
-            print(f"  📁 Guardado: {out_path}")
+            if payload:
+                save_payload(out_path, payload)
 
     print("\n✅ Proceso finalizado.")
 
