@@ -15,7 +15,8 @@ REQUIRED_META_KEYS = {
     "Start_Times",
     "Generated_At",
 }
-TRACE_KEYS = ("Speed_Kmh", "Throttle_Pct", "Brake_Pct", "Gear", "Rpm")
+REQUIRED_TRACE_KEYS = ("Distance_Pct", "Speed_Kmh", "Throttle_Pct", "Brake_Pct", "Gear", "Rpm", "Drs")
+OPTIONAL_TRACE_KEYS = ("X", "Y")
 
 
 def validate_all():
@@ -61,12 +62,20 @@ def validate_all():
             if not t_code or t_code == "N/A":
                 errors.append(f"{path}: piloto {code} con Team_Code inválido ({d.get('Team_Name')})")
 
+            lap_times = d.get("Lap_Times")
+            if lap_times is not None and not isinstance(lap_times, list):
+                errors.append(f"{path} [{code}]: 'Lap_Times' debe ser una lista")
+
             trace = d.get("Fastest_Lap_Trace")
             if trace is not None:
                 n = trace.get("Samples", 0)
-                for tk in TRACE_KEYS:
+                for tk in REQUIRED_TRACE_KEYS:
                     if len(trace.get(tk, [])) != n:
                         errors.append(f"{path} [{code}]: longitud inconsistente en {tk}")
+                for otk in OPTIONAL_TRACE_KEYS:
+                    arr = trace.get(otk)
+                    if arr is not None and len(arr) != n:
+                        errors.append(f"{path} [{code}]: longitud inconsistente en {otk}")
             elif d.get("Fastest_Lap_Sec") is not None:
                 warnings.append(f"{path} [{code}]: tiene vuelta rápida pero sin Fastest_Lap_Trace")
 
