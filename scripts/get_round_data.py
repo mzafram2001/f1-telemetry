@@ -227,13 +227,13 @@ def build_empty_driver_entry(code, info, status, grid_pos=None, finish_pos=None,
 
 
 def match_openf1_session(openf1_sessions, session_type, scheduled_iso):
-    """Empareja la sesión oficial con su session_key en OpenF1."""
+    """Empareja la sesión oficial con su session_key en OpenF1 (margen de 84h para sesiones en viernes o aplazadas)."""
     target_dt = parse_iso_utc(scheduled_iso)
     if not target_dt:
         return None
 
     best_match = None
-    best_diff = timedelta(hours=36)
+    best_diff = timedelta(hours=84)
 
     for s in openf1_sessions:
         if s.get("is_cancelled"):
@@ -249,6 +249,42 @@ def match_openf1_session(openf1_sessions, session_type, scheduled_iso):
             best_match = s
 
     return best_match
+
+
+def fill_missing_start_times(meta_block, openf1_sessions, race_anchor_iso, existing_payload=None):
+    """Rellena Start_Times faltantes o sin hora exacta (ej. 2023 en F1DB) usando OpenF1 o caché local."""
+    start_times = dict(meta_block.get("Start_Times") or {})
+    old_starts = (existing_payload or {}).get("Meta", {}).get("Start_Times") or {}
+    is_sprint = meta_block.get("Is_Sprint", False)
+
+    name_candidates = {
+        "Qualifying": ("Qualifying",),
+        "Sprint_Qualifying": ("Sprint Qualifying", "Sprint Shootout"),
+        "Sprint": ("Sprint",),
+        "Race": ("Race",),
+    }
+
+    for key, names in name_candidates.items():
+        current_val = start_times.get(key)
+        if current_val and "T" in str(current_val):
+            continue
+        if key in ("Sprint", "Sprint_Qualifying") and not is_sprint:
+            continue
+
+        matched = None
+        if openf1_sessions and race_anchor_iso:
+            for s_name in names:
+                matched = match_openf1_session(openf1_sessions, s_name, race_anchor_iso)
+                if matched:
+                    break
+
+        if matched and matched.get("date_start"):
+            dt = parse_iso_utc(matched["date_start"])
+            start_times[key] = dt.strftime("%Y-%m-%dT%H:%M:%SZ") if dt else matched["date_start"]
+        elif old_starts.get(key) and "T" in str(old_starts[key]):
+            start_times[key] = old_starts[key]
+
+    meta_block["Start_Times"] = start_times
 
 
 def summarize_weather(weather_rows):
@@ -768,6 +804,7 @@ def process_session(
     race_info=None,
     openf1_session=None,
     existing_payload=None,
+    openf1_sessions=None,
 ):
     session_key = (
         openf1_session["session_key"]
@@ -1070,6 +1107,8 @@ def process_session(
             race_info=race_info,
             openf1_session_key=session_key,
         )
+        race_anchor = to_iso_utc(race_info.get("date"), race_info.get("time"), default_time="12:00:00Z")
+        fill_missing_start_times(meta_block, openf1_sessions, race_anchor, existing_payload)
     else:
         meta_block = dict((existing_payload or {}).get("Meta", {}))
         meta_block["OpenF1_Session_Key"] = session_key
@@ -1096,13 +1135,15 @@ def patch_local_file_with_f1db(season, race_id, session_type, out_path, race_inf
         return False
 
     old_meta = payload.get("Meta", {})
-    payload["Meta"] = build_meta(
+    new_meta = build_meta(
         season=season,
         race_id=race_id,
         session_type=session_type,
         race_info=race_info,
         openf1_session_key=old_meta.get("OpenF1_Session_Key"),
     )
+    fill_missing_start_times(new_meta, openf1_sessions=None, race_anchor_iso=None, existing_payload=payload)
+    payload["Meta"] = new_meta
 
     drivers = payload.get("Drivers", [])
     existing_codes = set()
@@ -1304,7 +1345,7 @@ def main():
             if not sched_obj or not sched_obj.get("date"):
                 continue
 
-            sched_iso = to_iso_utc(sched_obj["date"], sched_obj.get("time"))
+            sched_iso = to_iso_utc(sched_obj["date"], sched_obj.get("time"), default_time="12:00:00Z")
             sched_dt = parse_iso_utc(sched_iso)
 
             if not sched_dt or (now_utc - sched_dt) < timedelta(hours=3):
@@ -1335,6 +1376,7 @@ def main():
                     race_info=race_info,
                     openf1_session=openf1_session,
                     existing_payload=existing_payload,
+                    openf1_sessions=openf1_sessions,
                 )
             except OpenF1LiveSessionError as e:
                 print(f"⏸️ {e} Deteniendo descarga limpia.")
