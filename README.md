@@ -81,8 +81,10 @@ Each session file (`data/{season}/round_{id}/{qualifying|sprint|race}.json`) fol
 | `Full_Throttle_Pct` / `Brake_Pct` | `Float` | Share (`0.0`–`1.0`) of the fastest lap at $\ge 95\%$ throttle or braking | `0.4917` / `0.1972` |
 | `Pit_Stops` | `Integer` | Total pit lane visits (`0` in Qualifying) | `3` |
 | `Avg_Pit_Lane_Sec` / `Avg_Pit_Stop_Sec` | `Float \| null` | Mean total pit-lane time vs. stationary tyre-change time in seconds | `27.706` / `2.267` |
+| `Lap_Times` | `Array` | Lap-by-lap durations in seconds (`1..N`, `null` if unrecorded) | `[108.432, 102.11, ...]` |
 | `Stints` | `Array` | Tyre compounds, lap ranges, and tyre age at start of each stint | `[{"Compound": "SOFT", ...}]` |
-| `Fastest_Lap_Trace` | `Object \| null` | Fastest lap resampled to `100` equidistant points (`Speed_Kmh`, `Throttle_Pct`, `Brake_Pct` binary `0`/`100`, `Gear`, `Rpm`) | `{"Samples": 100, ...}` |
+| `Fastest_Lap_Trace` | `Object \| null` | `100` synchronized points (`Distance_Pct`, `Speed_Kmh`, `Throttle_Pct`, `Brake_Pct`, `Gear`, `Rpm`, `Drs`, `X`, `Y`) | `{"Samples": 100, ...}` |
+
 
 ### `Teams`
 
