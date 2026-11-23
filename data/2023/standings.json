@@ -1,7 +1,11 @@
 {
     "Season": 2023,
     "Completed_Rounds": 22,
+<<<<<<< Updated upstream
     "Generated_At": "2026-11-23T14:27:42.537179",
+=======
+    "Generated_At": "2026-11-23T15:22:51.642549",
+>>>>>>> Stashed changes
     "Drivers_Championship": [
         {
             "Driver_Code": "VER",
