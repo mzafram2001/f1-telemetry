@@ -1,3 +1,4 @@
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -15,18 +16,20 @@ REQUIRED_META_KEYS = {
     "Start_Times",
     "Generated_At",
 }
-REQUIRED_TRACE_KEYS = ("Distance_Pct", "Speed_Kmh", "Throttle_Pct", "Brake_Pct", "Gear", "Rpm", "Drs")
+BASE_TRACE_KEYS = ("Speed_Kmh", "Throttle_Pct", "Brake_Pct", "Gear", "Rpm")
+EXTENDED_TRACE_KEYS = ("Distance_Pct", "Drs")
 OPTIONAL_TRACE_KEYS = ("X", "Y")
 
 
-def validate_all():
+def validate_all(season=None):
     if not DATA_DIR.exists():
         print("❌ No existe el directorio 'data/'.")
         sys.exit(1)
 
-    files = sorted(DATA_DIR.glob("*/*/*.json"))
+    pattern = f"{season}/*/*.json" if season else "*/*/*.json"
+    files = sorted(DATA_DIR.glob(pattern))
     if not files:
-        print("⚠️ No hay archivos JSON todavía en 'data/'.")
+        print(f"⚠️ No hay archivos JSON en 'data/{pattern}'.")
         return
 
     errors = []
@@ -69,9 +72,17 @@ def validate_all():
             trace = d.get("Fastest_Lap_Trace")
             if trace is not None:
                 n = trace.get("Samples", 0)
-                for tk in REQUIRED_TRACE_KEYS:
+                for tk in BASE_TRACE_KEYS:
                     if len(trace.get(tk, [])) != n:
                         errors.append(f"{path} [{code}]: longitud inconsistente en {tk}")
+                for etk in EXTENDED_TRACE_KEYS:
+                    if etk not in trace:
+                        if season:
+                            errors.append(f"{path} [{code}]: falta {etk} en traza")
+                        else:
+                            warnings.append(f"{path} [{code}]: pendiente de migrar ({etk})")
+                    elif len(trace.get(etk, [])) != n:
+                        errors.append(f"{path} [{code}]: longitud inconsistente en {etk}")
                 for otk in OPTIONAL_TRACE_KEYS:
                     arr = trace.get(otk)
                     if arr is not None and len(arr) != n:
@@ -96,4 +107,7 @@ def validate_all():
 
 
 if __name__ == "__main__":
-    validate_all()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--season", type=int, default=None)
+    args = parser.parse_args()
+    validate_all(season=args.season)
