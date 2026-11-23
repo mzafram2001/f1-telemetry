@@ -3,6 +3,7 @@ name: Update F1 Telemetry data
 on:
   schedule:
     - cron: '8 4 * * 1'
+    - cron: '8 4 * * 2'
   workflow_dispatch:
     inputs:
       season:
@@ -15,6 +16,11 @@ on:
         type: string
       force:
         description: 'Overwrite existing JSON files'
+        required: false
+        type: boolean
+        default: false
+      f1db_only:
+        description: 'Refresh official F1DB metadata/results in local JSONs without calling OpenF1'
         required: false
         type: boolean
         default: false
@@ -41,6 +47,7 @@ jobs:
           if [ -n "${{ inputs.season }}" ]; then ARGS="$ARGS --season ${{ inputs.season }}"; fi
           if [ -n "${{ inputs.round }}" ]; then ARGS="$ARGS --round ${{ inputs.round }}"; fi
           if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ "${{ inputs.f1db_only }}" = "true" ]; then ARGS="$ARGS --f1db-only"; fi
           python -u scripts/get_round_data.py $ARGS
 
       - name: Validate telemetry dataset
@@ -48,6 +55,9 @@ jobs:
           VAL_ARGS=""
           if [ -n "${{ inputs.season }}" ]; then VAL_ARGS="--season ${{ inputs.season }}"; fi
           python scripts/validate_data.py $VAL_ARGS
+
+      - name: Build manifest and championship standings
+        run: python scripts/build_indexes.py
 
       - name: Sync remote, update README and push
         run: |
@@ -58,4 +68,4 @@ jobs:
           if [ -f scripts/update_readme.py ]; then python scripts/update_readme.py; fi
 
           git add data/ README.md
-          git diff --staged --quiet || (git commit -m "auto: Update F1 Telemetry data & README" && git push)
+          git diff --staged --quiet || (git commit -m "auto: Update F1 Telemetry data, indexes & README" && git push)
