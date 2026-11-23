@@ -1,0 +1,2948 @@
+{
+    "Generated_At": "2026-11-23T12:24:17.269357",
+    "Seasons": [
+        {
+            "Season": 2026,
+            "Completed_Rounds": 20,
+            "Standings_Path": "data/2026/standings.json",
+            "Rounds": [
+                {
+                    "Id": "2026_02",
+                    "Race_Id": 2,
+                    "Event_Name": "Chinese Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "shanghai",
+                        "City": "Shanghai",
+                        "Country_Code": "CHN",
+                        "Country_Name": "China",
+                        "Svg_Path": "src/circuits/shanghai.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-03-14T07:00:00Z",
+                        "Sprint_Qualifying": "2026-03-13T07:30:00Z",
+                        "Sprint": "2026-03-14T03:00:00Z",
+                        "Race": "2026-03-15T07:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "RUS",
+                        "HAM"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_03",
+                    "Race_Id": 3,
+                    "Event_Name": "Japanese Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "suzuka",
+                        "City": "Suzuka",
+                        "Country_Code": "JPN",
+                        "Country_Name": "Japan",
+                        "Svg_Path": "src/circuits/suzuka.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-03-28T06:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-03-29T05:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "PIA",
+                        "LEC"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_04",
+                    "Race_Id": 4,
+                    "Event_Name": "Miami Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "miami",
+                        "City": "Miami",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/miami.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-05-02T20:00:00Z",
+                        "Sprint_Qualifying": "2026-05-01T20:30:00Z",
+                        "Sprint": "2026-05-02T16:00:00Z",
+                        "Race": "2026-05-03T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_05",
+                    "Race_Id": 5,
+                    "Event_Name": "Canadian Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "montreal",
+                        "City": "Montreal",
+                        "Country_Code": "CAN",
+                        "Country_Name": "Canada",
+                        "Svg_Path": "src/circuits/montreal.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-05-23T20:00:00Z",
+                        "Sprint_Qualifying": "2026-05-22T20:30:00Z",
+                        "Sprint": "2026-05-23T16:00:00Z",
+                        "Race": "2026-05-24T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "HAM",
+                        "VER"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_06",
+                    "Race_Id": 6,
+                    "Event_Name": "Monaco Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monaco",
+                        "City": "Monte Carlo",
+                        "Country_Code": "MCO",
+                        "Country_Name": "Monaco",
+                        "Svg_Path": "src/circuits/monaco.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-06-06T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-06-07T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "HAM",
+                        "HAD"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_07",
+                    "Race_Id": 7,
+                    "Event_Name": "Barcelona Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "catalunya",
+                        "City": "Barcelona",
+                        "Country_Code": "ESP",
+                        "Country_Name": "Spain",
+                        "Svg_Path": "src/circuits/catalunya.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-06-13T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-06-14T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "HAM",
+                    "Podium_Codes": [
+                        "HAM",
+                        "RUS",
+                        "NOR"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_08",
+                    "Race_Id": 8,
+                    "Event_Name": "Austrian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "spielberg",
+                        "City": "Spielberg",
+                        "Country_Code": "AUT",
+                        "Country_Name": "Austria",
+                        "Svg_Path": "src/circuits/spielberg.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-06-27T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-06-28T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "VER",
+                        "ANT"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_09",
+                    "Race_Id": 9,
+                    "Event_Name": "British Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "silverstone",
+                        "City": "Silverstone",
+                        "Country_Code": "GBR",
+                        "Country_Name": "United Kingdom",
+                        "Svg_Path": "src/circuits/silverstone.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-07-04T15:00:00Z",
+                        "Sprint_Qualifying": "2026-07-03T15:30:00Z",
+                        "Sprint": "2026-07-04T11:00:00Z",
+                        "Race": "2026-07-05T14:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "LEC",
+                    "Podium_Codes": [
+                        "LEC",
+                        "RUS",
+                        "HAM"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_10",
+                    "Race_Id": 10,
+                    "Event_Name": "Belgian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "spa-francorchamps",
+                        "City": "Spa",
+                        "Country_Code": "BEL",
+                        "Country_Name": "Belgium",
+                        "Svg_Path": "src/circuits/spa-francorchamps.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-07-18T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-07-19T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "LEC",
+                        "VER"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_11",
+                    "Race_Id": 11,
+                    "Event_Name": "Hungarian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "hungaroring",
+                        "City": "Budapest",
+                        "Country_Code": "HUN",
+                        "Country_Name": "Hungary",
+                        "Svg_Path": "src/circuits/hungaroring.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-07-25T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-07-26T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "ANT"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_12",
+                    "Race_Id": 12,
+                    "Event_Name": "Dutch Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "zandvoort",
+                        "City": "Zandvoort",
+                        "Country_Code": "NLD",
+                        "Country_Name": "Netherlands",
+                        "Svg_Path": "src/circuits/zandvoort.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-08-22T14:00:00Z",
+                        "Sprint_Qualifying": "2026-08-21T14:30:00Z",
+                        "Sprint": "2026-08-22T10:00:00Z",
+                        "Race": "2026-08-23T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "ANT",
+                        "RUS"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_13",
+                    "Race_Id": 13,
+                    "Event_Name": "Italian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monza",
+                        "City": "Monza",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/monza.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-09-05T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-09-06T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "RUS",
+                        "VER"
+                    ],
+                    "Pole_Code": "GAS",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_14",
+                    "Race_Id": 14,
+                    "Event_Name": "Spanish Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "madring",
+                        "City": "Madrid",
+                        "Country_Code": "ESP",
+                        "Country_Name": "Spain",
+                        "Svg_Path": "src/circuits/madring.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-09-12T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-09-13T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "VER",
+                        "NOR"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_15",
+                    "Race_Id": 15,
+                    "Event_Name": "Azerbaijan Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "baku",
+                        "City": "Baku",
+                        "Country_Code": "AZE",
+                        "Country_Name": "Azerbaijan",
+                        "Svg_Path": "src/circuits/baku.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-09-25T12:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-09-26T11:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "VER",
+                        "HAD"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_16",
+                    "Race_Id": 16,
+                    "Event_Name": "Bahrain Grand Prix in Malaysia",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "sepang",
+                        "City": "Kuala Lumpur",
+                        "Country_Code": "MYS",
+                        "Country_Name": "Malaysia",
+                        "Svg_Path": "src/circuits/sepang.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-10-03T08:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-10-04T07:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "ANT",
+                        "HAM"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_17",
+                    "Race_Id": 17,
+                    "Event_Name": "Singapore Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "marina-bay",
+                        "City": "Marina Bay",
+                        "Country_Code": "SGP",
+                        "Country_Name": "Singapore",
+                        "Svg_Path": "src/circuits/marina-bay.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-10-10T13:00:00Z",
+                        "Sprint_Qualifying": "2026-10-09T12:30:00Z",
+                        "Sprint": "2026-10-10T09:00:00Z",
+                        "Race": "2026-10-11T12:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "LEC",
+                        "ANT"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_18",
+                    "Race_Id": 18,
+                    "Event_Name": "United States Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "austin",
+                        "City": "Austin",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/austin.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-10-24T21:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-10-25T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "ANT",
+                    "Podium_Codes": [
+                        "ANT",
+                        "LEC",
+                        "VER"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_19",
+                    "Race_Id": 19,
+                    "Event_Name": "Mexico City Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "mexico-city",
+                        "City": "Mexico City",
+                        "Country_Code": "MEX",
+                        "Country_Name": "Mexico",
+                        "Svg_Path": "src/circuits/mexico-city.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-10-31T21:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-11-01T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "HAM",
+                        "ANT"
+                    ],
+                    "Pole_Code": "HAM",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2026_20",
+                    "Race_Id": 20,
+                    "Event_Name": "São Paulo Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "interlagos",
+                        "Full_Name": "Autódromo José Carlos Pace",
+                        "City": "São Paulo",
+                        "Country_Code": "BRA",
+                        "Country_Name": "Brazil",
+                        "Type": "RACE",
+                        "Direction": "ANTI_CLOCKWISE",
+                        "Length_Km": 4.309,
+                        "Turns": 15,
+                        "Scheduled_Laps": 71,
+                        "Race_Distance_Km": 305.879,
+                        "Svg_Path": "src/circuits/interlagos.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-11-07T18:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-11-08T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "HAD"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": {
+                        "Driver_Code": "VER",
+                        "Driver_Name": "M. Verstappen",
+                        "Percentage": 20.62
+                    }
+                },
+                {
+                    "Id": "2026_21",
+                    "Race_Id": 21,
+                    "Event_Name": "Las Vegas Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "las-vegas",
+                        "City": "Las Vegas",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/las-vegas.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2026-11-21T04:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2026-11-22T04:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "ANT",
+                    "Fastest_Lap_Code": "LAW",
+                    "Driver_Of_The_Day": null
+                }
+            ]
+        },
+        {
+            "Season": 2025,
+            "Completed_Rounds": 24,
+            "Standings_Path": "data/2025/standings.json",
+            "Rounds": [
+                {
+                    "Id": "2025_01",
+                    "Race_Id": 1,
+                    "Event_Name": "Australian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "melbourne",
+                        "City": "Melbourne",
+                        "Country_Code": "AUS",
+                        "Country_Name": "Australia",
+                        "Svg_Path": "src/circuits/melbourne.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-03-15T05:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-03-16T04:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "RUS"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_02",
+                    "Race_Id": 2,
+                    "Event_Name": "Chinese Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "shanghai",
+                        "City": "Shanghai",
+                        "Country_Code": "CHN",
+                        "Country_Name": "China",
+                        "Svg_Path": "src/circuits/shanghai.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-03-22T07:00:00Z",
+                        "Sprint_Qualifying": "2025-03-21T07:30:00Z",
+                        "Sprint": "2025-03-22T03:00:00Z",
+                        "Race": "2025-03-23T07:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "NOR",
+                        "RUS"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_03",
+                    "Race_Id": 3,
+                    "Event_Name": "Japanese Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "suzuka",
+                        "City": "Suzuka",
+                        "Country_Code": "JPN",
+                        "Country_Name": "Japan",
+                        "Svg_Path": "src/circuits/suzuka.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-04-05T06:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-04-06T05:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_04",
+                    "Race_Id": 4,
+                    "Event_Name": "Bahrain Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "bahrain",
+                        "City": "Sakhir",
+                        "Country_Code": "BHR",
+                        "Country_Name": "Bahrain",
+                        "Svg_Path": "src/circuits/bahrain.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-04-12T16:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-04-13T15:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "RUS",
+                        "NOR"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_05",
+                    "Race_Id": 5,
+                    "Event_Name": "Saudi Arabian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "jeddah",
+                        "City": "Jeddah",
+                        "Country_Code": "SAU",
+                        "Country_Name": "Saudi Arabia",
+                        "Svg_Path": "src/circuits/jeddah.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-04-19T17:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-04-20T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "VER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_06",
+                    "Race_Id": 6,
+                    "Event_Name": "Miami Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "miami",
+                        "City": "Miami",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/miami.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-05-03T20:00:00Z",
+                        "Sprint_Qualifying": "2025-05-02T20:30:00Z",
+                        "Sprint": "2025-05-03T16:00:00Z",
+                        "Race": "2025-05-04T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "NOR",
+                        "RUS"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_07",
+                    "Race_Id": 7,
+                    "Event_Name": "Emilia Romagna Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "imola",
+                        "City": "Imola",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/imola.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-05-17T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-05-18T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_08",
+                    "Race_Id": 8,
+                    "Event_Name": "Monaco Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monaco",
+                        "City": "Monte Carlo",
+                        "Country_Code": "MCO",
+                        "Country_Name": "Monaco",
+                        "Svg_Path": "src/circuits/monaco.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-05-24T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-05-25T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "LEC",
+                        "PIA"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_09",
+                    "Race_Id": 9,
+                    "Event_Name": "Spanish Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "catalunya",
+                        "City": "Barcelona",
+                        "Country_Code": "ESP",
+                        "Country_Name": "Spain",
+                        "Svg_Path": "src/circuits/catalunya.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-05-31T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-06-01T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "NOR",
+                        "LEC"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_10",
+                    "Race_Id": 10,
+                    "Event_Name": "Canadian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "montreal",
+                        "City": "Montreal",
+                        "Country_Code": "CAN",
+                        "Country_Name": "Canada",
+                        "Svg_Path": "src/circuits/montreal.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-06-14T20:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-06-15T18:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "VER",
+                        "ANT"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_11",
+                    "Race_Id": 11,
+                    "Event_Name": "Austrian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "spielberg",
+                        "City": "Spielberg",
+                        "Country_Code": "AUT",
+                        "Country_Name": "Austria",
+                        "Svg_Path": "src/circuits/spielberg.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-06-28T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-06-29T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "PIA",
+                        "LEC"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_12",
+                    "Race_Id": 12,
+                    "Event_Name": "British Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "silverstone",
+                        "City": "Silverstone",
+                        "Country_Code": "GBR",
+                        "Country_Name": "United Kingdom",
+                        "Svg_Path": "src/circuits/silverstone.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-07-05T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-07-06T14:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "PIA",
+                        "HUL"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_13",
+                    "Race_Id": 13,
+                    "Event_Name": "Belgian Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "spa-francorchamps",
+                        "City": "Spa",
+                        "Country_Code": "BEL",
+                        "Country_Name": "Belgium",
+                        "Svg_Path": "src/circuits/spa-francorchamps.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-07-26T14:00:00Z",
+                        "Sprint_Qualifying": "2025-07-25T14:30:00Z",
+                        "Sprint": "2025-07-26T10:00:00Z",
+                        "Race": "2025-07-27T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "NOR",
+                        "LEC"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_14",
+                    "Race_Id": 14,
+                    "Event_Name": "Hungarian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "hungaroring",
+                        "City": "Budapest",
+                        "Country_Code": "HUN",
+                        "Country_Name": "Hungary",
+                        "Svg_Path": "src/circuits/hungaroring.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-08-02T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-08-03T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "PIA",
+                        "RUS"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_15",
+                    "Race_Id": 15,
+                    "Event_Name": "Dutch Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "zandvoort",
+                        "City": "Zandvoort",
+                        "Country_Code": "NLD",
+                        "Country_Name": "Netherlands",
+                        "Svg_Path": "src/circuits/zandvoort.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-08-30T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-08-31T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "VER",
+                        "HAD"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_16",
+                    "Race_Id": 16,
+                    "Event_Name": "Italian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monza",
+                        "City": "Monza",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/monza.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-09-06T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-09-07T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_17",
+                    "Race_Id": 17,
+                    "Event_Name": "Azerbaijan Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "baku",
+                        "City": "Baku",
+                        "Country_Code": "AZE",
+                        "Country_Name": "Azerbaijan",
+                        "Svg_Path": "src/circuits/baku.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-09-20T12:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-09-21T11:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "RUS",
+                        "SAI"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_18",
+                    "Race_Id": 18,
+                    "Event_Name": "Singapore Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "marina-bay",
+                        "City": "Marina Bay",
+                        "Country_Code": "SGP",
+                        "Country_Name": "Singapore",
+                        "Svg_Path": "src/circuits/marina-bay.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-10-04T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-10-05T12:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "VER",
+                        "NOR"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_19",
+                    "Race_Id": 19,
+                    "Event_Name": "United States Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "austin",
+                        "City": "Austin",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/austin.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-10-18T21:00:00Z",
+                        "Sprint_Qualifying": "2025-10-17T21:30:00Z",
+                        "Sprint": "2025-10-18T17:00:00Z",
+                        "Race": "2025-10-19T19:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ANT",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_20",
+                    "Race_Id": 20,
+                    "Event_Name": "Mexico City Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "mexico-city",
+                        "City": "Mexico City",
+                        "Country_Code": "MEX",
+                        "Country_Name": "Mexico",
+                        "Svg_Path": "src/circuits/mexico-city.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-10-25T21:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-10-26T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "LEC",
+                        "VER"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_21",
+                    "Race_Id": 21,
+                    "Event_Name": "São Paulo Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "interlagos",
+                        "City": "São Paulo",
+                        "Country_Code": "BRA",
+                        "Country_Name": "Brazil",
+                        "Svg_Path": "src/circuits/interlagos.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-11-08T18:00:00Z",
+                        "Sprint_Qualifying": "2025-11-07T18:30:00Z",
+                        "Sprint": "2025-11-08T14:00:00Z",
+                        "Race": "2025-11-09T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "ANT",
+                        "VER"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "ALB",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_22",
+                    "Race_Id": 22,
+                    "Event_Name": "Las Vegas Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "las-vegas",
+                        "City": "Las Vegas",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/las-vegas.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-11-22T04:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-11-23T04:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "RUS",
+                        "ANT"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_23",
+                    "Race_Id": 23,
+                    "Event_Name": "Qatar Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "lusail",
+                        "City": "Lusail",
+                        "Country_Code": "QAT",
+                        "Country_Name": "Qatar",
+                        "Svg_Path": "src/circuits/lusail.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-11-29T18:00:00Z",
+                        "Sprint_Qualifying": "2025-11-28T17:30:00Z",
+                        "Sprint": "2025-11-29T14:00:00Z",
+                        "Race": "2025-11-30T16:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PIA",
+                        "SAI"
+                    ],
+                    "Pole_Code": "PIA",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2025_24",
+                    "Race_Id": 24,
+                    "Event_Name": "Abu Dhabi Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "yas-marina",
+                        "City": "Abu Dhabi",
+                        "Country_Code": "ARE",
+                        "Country_Name": "United Arab Emirates",
+                        "Svg_Path": "src/circuits/yas-marina.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2025-12-06T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2025-12-07T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PIA",
+                        "NOR"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                }
+            ]
+        },
+        {
+            "Season": 2024,
+            "Completed_Rounds": 24,
+            "Standings_Path": "data/2024/standings.json",
+            "Rounds": [
+                {
+                    "Id": "2024_01",
+                    "Race_Id": 1,
+                    "Event_Name": "Bahrain Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "bahrain",
+                        "City": "Sakhir",
+                        "Country_Code": "BHR",
+                        "Country_Name": "Bahrain",
+                        "Svg_Path": "src/circuits/bahrain.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-03-01T16:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-03-02T15:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "SAI"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_02",
+                    "Race_Id": 2,
+                    "Event_Name": "Saudi Arabian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "jeddah",
+                        "City": "Jeddah",
+                        "Country_Code": "SAU",
+                        "Country_Name": "Saudi Arabia",
+                        "Svg_Path": "src/circuits/jeddah.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-03-08T17:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-03-09T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_03",
+                    "Race_Id": 3,
+                    "Event_Name": "Australian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "melbourne",
+                        "City": "Melbourne",
+                        "Country_Code": "AUS",
+                        "Country_Name": "Australia",
+                        "Svg_Path": "src/circuits/melbourne.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-03-23T05:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-03-24T04:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "SAI",
+                    "Podium_Codes": [
+                        "SAI",
+                        "LEC",
+                        "NOR"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_04",
+                    "Race_Id": 4,
+                    "Event_Name": "Japanese Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "suzuka",
+                        "City": "Suzuka",
+                        "Country_Code": "JPN",
+                        "Country_Name": "Japan",
+                        "Svg_Path": "src/circuits/suzuka.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-04-06T06:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-04-07T05:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "SAI"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_05",
+                    "Race_Id": 5,
+                    "Event_Name": "Chinese Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "shanghai",
+                        "City": "Shanghai",
+                        "Country_Code": "CHN",
+                        "Country_Name": "China",
+                        "Svg_Path": "src/circuits/shanghai.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-04-20T07:00:00Z",
+                        "Sprint_Qualifying": "2024-04-19T07:30:00Z",
+                        "Sprint": "2024-04-20T03:00:00Z",
+                        "Race": "2024-04-21T07:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PER"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ALO",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_06",
+                    "Race_Id": 6,
+                    "Event_Name": "Miami Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "miami",
+                        "City": "Miami",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/miami.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-05-04T20:00:00Z",
+                        "Sprint_Qualifying": "2024-05-03T20:30:00Z",
+                        "Sprint": "2024-05-04T16:00:00Z",
+                        "Race": "2024-05-05T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_07",
+                    "Race_Id": 7,
+                    "Event_Name": "Emilia Romagna Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "imola",
+                        "City": "Imola",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/imola.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-05-18T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-05-19T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_08",
+                    "Race_Id": 8,
+                    "Event_Name": "Monaco Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monaco",
+                        "City": "Monte Carlo",
+                        "Country_Code": "MCO",
+                        "Country_Name": "Monaco",
+                        "Svg_Path": "src/circuits/monaco.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-05-25T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-05-26T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "LEC",
+                    "Podium_Codes": [
+                        "LEC",
+                        "PIA",
+                        "SAI"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_09",
+                    "Race_Id": 9,
+                    "Event_Name": "Canadian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "montreal",
+                        "City": "Montreal",
+                        "Country_Code": "CAN",
+                        "Country_Name": "Canada",
+                        "Svg_Path": "src/circuits/montreal.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-06-08T20:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-06-09T18:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "RUS"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_10",
+                    "Race_Id": 10,
+                    "Event_Name": "Spanish Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "catalunya",
+                        "City": "Barcelona",
+                        "Country_Code": "ESP",
+                        "Country_Name": "Spain",
+                        "Svg_Path": "src/circuits/catalunya.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-06-22T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-06-23T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "HAM"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_11",
+                    "Race_Id": 11,
+                    "Event_Name": "Austrian Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "spielberg",
+                        "City": "Spielberg",
+                        "Country_Code": "AUT",
+                        "Country_Name": "Austria",
+                        "Svg_Path": "src/circuits/spielberg.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-06-29T14:00:00Z",
+                        "Sprint_Qualifying": "2024-06-28T14:30:00Z",
+                        "Sprint": "2024-06-29T10:00:00Z",
+                        "Race": "2024-06-30T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "PIA",
+                        "SAI"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ALO",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_12",
+                    "Race_Id": 12,
+                    "Event_Name": "British Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "silverstone",
+                        "City": "Silverstone",
+                        "Country_Code": "GBR",
+                        "Country_Name": "United Kingdom",
+                        "Svg_Path": "src/circuits/silverstone.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-07-06T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-07-07T14:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "HAM",
+                    "Podium_Codes": [
+                        "HAM",
+                        "VER",
+                        "NOR"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "SAI",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_13",
+                    "Race_Id": 13,
+                    "Event_Name": "Hungarian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "hungaroring",
+                        "City": "Budapest",
+                        "Country_Code": "HUN",
+                        "Country_Name": "Hungary",
+                        "Svg_Path": "src/circuits/hungaroring.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-07-20T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-07-21T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "NOR",
+                        "HAM"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_14",
+                    "Race_Id": 14,
+                    "Event_Name": "Belgian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "spa-francorchamps",
+                        "City": "Spa",
+                        "Country_Code": "BEL",
+                        "Country_Name": "Belgium",
+                        "Svg_Path": "src/circuits/spa-francorchamps.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-07-27T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-07-28T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "HAM",
+                    "Podium_Codes": [
+                        "HAM",
+                        "PIA",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "PER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_15",
+                    "Race_Id": 15,
+                    "Event_Name": "Dutch Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "zandvoort",
+                        "City": "Zandvoort",
+                        "Country_Code": "NLD",
+                        "Country_Name": "Netherlands",
+                        "Svg_Path": "src/circuits/zandvoort.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-08-24T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-08-25T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_16",
+                    "Race_Id": 16,
+                    "Event_Name": "Italian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monza",
+                        "City": "Monza",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/monza.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-08-31T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-09-01T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "LEC",
+                    "Podium_Codes": [
+                        "LEC",
+                        "PIA",
+                        "NOR"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_17",
+                    "Race_Id": 17,
+                    "Event_Name": "Azerbaijan Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "baku",
+                        "City": "Baku",
+                        "Country_Code": "AZE",
+                        "Country_Name": "Azerbaijan",
+                        "Svg_Path": "src/circuits/baku.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-09-14T12:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-09-15T11:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PIA",
+                    "Podium_Codes": [
+                        "PIA",
+                        "LEC",
+                        "RUS"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_18",
+                    "Race_Id": 18,
+                    "Event_Name": "Singapore Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "marina-bay",
+                        "City": "Marina Bay",
+                        "Country_Code": "SGP",
+                        "Country_Name": "Singapore",
+                        "Svg_Path": "src/circuits/marina-bay.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-09-21T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-09-22T12:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "VER",
+                        "PIA"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "RIC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_19",
+                    "Race_Id": 19,
+                    "Event_Name": "United States Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "austin",
+                        "City": "Austin",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/austin.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-10-19T22:00:00Z",
+                        "Sprint_Qualifying": "2024-10-18T21:30:00Z",
+                        "Sprint": "2024-10-19T18:00:00Z",
+                        "Race": "2024-10-20T19:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "LEC",
+                    "Podium_Codes": [
+                        "LEC",
+                        "SAI",
+                        "VER"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "OCO",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_20",
+                    "Race_Id": 20,
+                    "Event_Name": "Mexico City Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "mexico-city",
+                        "City": "Mexico City",
+                        "Country_Code": "MEX",
+                        "Country_Name": "Mexico",
+                        "Svg_Path": "src/circuits/mexico-city.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-10-26T21:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-10-27T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "SAI",
+                    "Podium_Codes": [
+                        "SAI",
+                        "NOR",
+                        "LEC"
+                    ],
+                    "Pole_Code": "SAI",
+                    "Fastest_Lap_Code": "LEC",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_21",
+                    "Race_Id": 21,
+                    "Event_Name": "São Paulo Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "interlagos",
+                        "City": "São Paulo",
+                        "Country_Code": "BRA",
+                        "Country_Name": "Brazil",
+                        "Svg_Path": "src/circuits/interlagos.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-11-02T18:00:00Z",
+                        "Sprint_Qualifying": "2024-11-01T18:30:00Z",
+                        "Sprint": "2024-11-02T14:00:00Z",
+                        "Race": "2024-11-03T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "OCO",
+                        "GAS"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_22",
+                    "Race_Id": 22,
+                    "Event_Name": "Las Vegas Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "las-vegas",
+                        "City": "Las Vegas",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/las-vegas.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-11-22T06:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-11-23T06:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "RUS",
+                    "Podium_Codes": [
+                        "RUS",
+                        "HAM",
+                        "SAI"
+                    ],
+                    "Pole_Code": "RUS",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_23",
+                    "Race_Id": 23,
+                    "Event_Name": "Qatar Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "lusail",
+                        "City": "Lusail",
+                        "Country_Code": "QAT",
+                        "Country_Name": "Qatar",
+                        "Svg_Path": "src/circuits/lusail.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-11-30T18:00:00Z",
+                        "Sprint_Qualifying": "2024-11-29T17:30:00Z",
+                        "Sprint": "2024-11-30T14:00:00Z",
+                        "Race": "2024-12-01T16:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "LEC",
+                        "PIA"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2024_24",
+                    "Race_Id": 24,
+                    "Event_Name": "Abu Dhabi Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "yas-marina",
+                        "City": "Abu Dhabi",
+                        "Country_Code": "ARE",
+                        "Country_Name": "United Arab Emirates",
+                        "Svg_Path": "src/circuits/yas-marina.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2024-12-07T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2024-12-08T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "NOR",
+                    "Podium_Codes": [
+                        "NOR",
+                        "SAI",
+                        "LEC"
+                    ],
+                    "Pole_Code": "NOR",
+                    "Fastest_Lap_Code": "MAG",
+                    "Driver_Of_The_Day": null
+                }
+            ]
+        },
+        {
+            "Season": 2023,
+            "Completed_Rounds": 22,
+            "Standings_Path": "data/2023/standings.json",
+            "Rounds": [
+                {
+                    "Id": "2023_01",
+                    "Race_Id": 1,
+                    "Event_Name": "Bahrain Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "bahrain",
+                        "City": "Sakhir",
+                        "Country_Code": "BHR",
+                        "Country_Name": "Bahrain",
+                        "Svg_Path": "src/circuits/bahrain.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-03-04T15:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-03-05T15:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "ALO"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ZHO",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_02",
+                    "Race_Id": 2,
+                    "Event_Name": "Saudi Arabian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "jeddah",
+                        "City": "Jeddah",
+                        "Country_Code": "SAU",
+                        "Country_Name": "Saudi Arabia",
+                        "Svg_Path": "src/circuits/jeddah.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-03-18T17:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-03-19T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "PER",
+                    "Podium_Codes": [
+                        "PER",
+                        "VER",
+                        "ALO"
+                    ],
+                    "Pole_Code": "PER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_03",
+                    "Race_Id": 3,
+                    "Event_Name": "Australian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "melbourne",
+                        "City": "Melbourne",
+                        "Country_Code": "AUS",
+                        "Country_Name": "Australia",
+                        "Svg_Path": "src/circuits/melbourne.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-04-01T05:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-04-02T05:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "HAM",
+                        "ALO"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "PER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_04",
+                    "Race_Id": 4,
+                    "Event_Name": "Azerbaijan Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "baku",
+                        "City": "Baku",
+                        "Country_Code": "AZE",
+                        "Country_Name": "Azerbaijan",
+                        "Svg_Path": "src/circuits/baku.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-04-28T13:00:00Z",
+                        "Sprint_Qualifying": "2023-04-29T09:30:00Z",
+                        "Sprint": "2023-04-29T13:30:00Z",
+                        "Race": "2023-04-30T11:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "PER",
+                    "Podium_Codes": [
+                        "PER",
+                        "VER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "RUS",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_05",
+                    "Race_Id": 5,
+                    "Event_Name": "Miami Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "miami",
+                        "City": "Miami",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/miami.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-05-06T20:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-05-07T19:30:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "ALO"
+                    ],
+                    "Pole_Code": "PER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_06",
+                    "Race_Id": 6,
+                    "Event_Name": "Monaco Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monaco",
+                        "City": "Monte Carlo",
+                        "Country_Code": "MCO",
+                        "Country_Name": "Monaco",
+                        "Svg_Path": "src/circuits/monaco.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-05-27T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-05-28T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "ALO",
+                        "OCO"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_07",
+                    "Race_Id": 7,
+                    "Event_Name": "Spanish Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "catalunya",
+                        "City": "Barcelona",
+                        "Country_Code": "ESP",
+                        "Country_Name": "Spain",
+                        "Svg_Path": "src/circuits/catalunya.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-06-03T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-06-04T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "HAM",
+                        "RUS"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_08",
+                    "Race_Id": 8,
+                    "Event_Name": "Canadian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "montreal",
+                        "City": "Montreal",
+                        "Country_Code": "CAN",
+                        "Country_Name": "Canada",
+                        "Svg_Path": "src/circuits/montreal.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-06-17T20:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-06-18T18:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "ALO",
+                        "HAM"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "PER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_09",
+                    "Race_Id": 9,
+                    "Event_Name": "Austrian Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "spielberg",
+                        "City": "Spielberg",
+                        "Country_Code": "AUT",
+                        "Country_Name": "Austria",
+                        "Svg_Path": "src/circuits/spielberg.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-06-30T15:00:00Z",
+                        "Sprint_Qualifying": "2023-07-01T10:30:00Z",
+                        "Sprint": "2023-07-01T14:30:00Z",
+                        "Race": "2023-07-02T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "LEC",
+                        "PER"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_10",
+                    "Race_Id": 10,
+                    "Event_Name": "British Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "silverstone",
+                        "City": "Silverstone",
+                        "Country_Code": "GBR",
+                        "Country_Name": "United Kingdom",
+                        "Svg_Path": "src/circuits/silverstone.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-07-08T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-07-09T14:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "HAM"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_11",
+                    "Race_Id": 11,
+                    "Event_Name": "Hungarian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "hungaroring",
+                        "City": "Budapest",
+                        "Country_Code": "HUN",
+                        "Country_Name": "Hungary",
+                        "Svg_Path": "src/circuits/hungaroring.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-07-22T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-07-23T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PER"
+                    ],
+                    "Pole_Code": "HAM",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_12",
+                    "Race_Id": 12,
+                    "Event_Name": "Belgian Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "spa-francorchamps",
+                        "City": "Spa",
+                        "Country_Code": "BEL",
+                        "Country_Name": "Belgium",
+                        "Svg_Path": "src/circuits/spa-francorchamps.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-07-28T15:00:00Z",
+                        "Sprint_Qualifying": "2023-07-29T10:30:00Z",
+                        "Sprint": "2023-07-29T14:30:00Z",
+                        "Race": "2023-07-30T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "LEC"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_13",
+                    "Race_Id": 13,
+                    "Event_Name": "Dutch Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "zandvoort",
+                        "City": "Zandvoort",
+                        "Country_Code": "NLD",
+                        "Country_Name": "Netherlands",
+                        "Svg_Path": "src/circuits/zandvoort.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-08-26T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-08-27T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "ALO",
+                        "GAS"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "ALO",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_14",
+                    "Race_Id": 14,
+                    "Event_Name": "Italian Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "monza",
+                        "City": "Monza",
+                        "Country_Code": "ITA",
+                        "Country_Name": "Italy",
+                        "Svg_Path": "src/circuits/monza.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-09-02T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-09-03T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PER",
+                        "SAI"
+                    ],
+                    "Pole_Code": "SAI",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_15",
+                    "Race_Id": 15,
+                    "Event_Name": "Singapore Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "marina-bay",
+                        "City": "Marina Bay",
+                        "Country_Code": "SGP",
+                        "Country_Name": "Singapore",
+                        "Svg_Path": "src/circuits/marina-bay.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-09-16T13:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-09-17T12:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "SAI",
+                    "Podium_Codes": [
+                        "SAI",
+                        "NOR",
+                        "HAM"
+                    ],
+                    "Pole_Code": "SAI",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_16",
+                    "Race_Id": 16,
+                    "Event_Name": "Japanese Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "suzuka",
+                        "City": "Suzuka",
+                        "Country_Code": "JPN",
+                        "Country_Name": "Japan",
+                        "Svg_Path": "src/circuits/suzuka.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-09-23T06:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-09-24T05:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "PIA"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_17",
+                    "Race_Id": 17,
+                    "Event_Name": "Qatar Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "lusail",
+                        "City": "Lusail",
+                        "Country_Code": "QAT",
+                        "Country_Name": "Qatar",
+                        "Svg_Path": "src/circuits/lusail.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-10-06T17:00:00Z",
+                        "Sprint_Qualifying": "2023-10-07T13:00:00Z",
+                        "Sprint": "2023-10-07T17:30:00Z",
+                        "Race": "2023-10-08T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "PIA",
+                        "NOR"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_18",
+                    "Race_Id": 18,
+                    "Event_Name": "United States Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "austin",
+                        "City": "Austin",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/austin.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-10-20T21:00:00Z",
+                        "Sprint_Qualifying": "2023-10-21T18:00:00Z",
+                        "Sprint": "2023-10-21T22:00:00Z",
+                        "Race": "2023-10-22T19:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "SAI"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "TSU",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_19",
+                    "Race_Id": 19,
+                    "Event_Name": "Mexico City Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "mexico-city",
+                        "City": "Mexico City",
+                        "Country_Code": "MEX",
+                        "Country_Name": "Mexico",
+                        "Svg_Path": "src/circuits/mexico-city.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-10-28T21:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-10-29T20:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "HAM",
+                        "LEC"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "HAM",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_20",
+                    "Race_Id": 20,
+                    "Event_Name": "São Paulo Grand Prix",
+                    "Is_Sprint": true,
+                    "Circuit": {
+                        "Id": "interlagos",
+                        "City": "São Paulo",
+                        "Country_Code": "BRA",
+                        "Country_Name": "Brazil",
+                        "Svg_Path": "src/circuits/interlagos.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-11-03T18:00:00Z",
+                        "Sprint_Qualifying": "2023-11-04T14:30:00Z",
+                        "Sprint": "2023-11-04T18:30:00Z",
+                        "Race": "2023-11-05T17:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "sprint",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "NOR",
+                        "ALO"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "NOR",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_21",
+                    "Race_Id": 21,
+                    "Event_Name": "Las Vegas Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "las-vegas",
+                        "City": "Las Vegas",
+                        "Country_Code": "USA",
+                        "Country_Name": "United States",
+                        "Svg_Path": "src/circuits/las-vegas.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-11-17T08:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-11-19T06:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "LEC",
+                        "PER"
+                    ],
+                    "Pole_Code": "LEC",
+                    "Fastest_Lap_Code": "PIA",
+                    "Driver_Of_The_Day": null
+                },
+                {
+                    "Id": "2023_22",
+                    "Race_Id": 22,
+                    "Event_Name": "Abu Dhabi Grand Prix",
+                    "Is_Sprint": false,
+                    "Circuit": {
+                        "Id": "yas-marina",
+                        "City": "Abu Dhabi",
+                        "Country_Code": "ARE",
+                        "Country_Name": "United Arab Emirates",
+                        "Svg_Path": "src/circuits/yas-marina.svg"
+                    },
+                    "Start_Times": {
+                        "Qualifying": "2023-11-25T14:00:00Z",
+                        "Sprint_Qualifying": null,
+                        "Sprint": null,
+                        "Race": "2023-11-26T13:00:00Z"
+                    },
+                    "Sessions": [
+                        "qualifying",
+                        "race"
+                    ],
+                    "Winner_Code": "VER",
+                    "Podium_Codes": [
+                        "VER",
+                        "LEC",
+                        "RUS"
+                    ],
+                    "Pole_Code": "VER",
+                    "Fastest_Lap_Code": "VER",
+                    "Driver_Of_The_Day": null
+                }
+            ]
+        }
+    ]
+}
